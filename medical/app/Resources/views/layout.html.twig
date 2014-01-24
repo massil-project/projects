@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+    	{% block favicon %}
+			<link rel="icon" type="image/ico" href="{{ asset('medical_bag.ico') }}"/>
+		{% endblock %}
+		
+    	<title>{% block title %}{% endblock %}</title>
+		
+    	<!-- Bootstrap core CSS -->
+    	{% block stylesheet %}
+    		<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    		<link href="{{ asset('css/bootstrap-formhelpers.css') }}" rel="stylesheet" media="screen">
+		{% endblock %}
+    <!-- Custom styles for this template -->
+
+  	</head> 
+
+  <body style="padding-top:70px">
+	{% block fixed_navbar %}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ path('medical_patient_home') }}">Cabinet Medical</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Patient <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ path('medical_patient_add') }}"><i class="glyphicon glyphicon-plus"></i> Ajouter un patient</a></li>
+                <li><a href="{{ path('medical_patient_home') }}"><i class="glyphicon glyphicon-list"></i> Liste des patients</a></li>
+              	<li class="divider"></li>
+                <li><a href="{{ path('medical_recherche_avance') }}"><i class="glyphicon glyphicon-search"></i> Rechercher un patient</a></li>              	
+              </ul>
+            </li>
+            
+	            <li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultation <b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="{{ path('medical_consultation_jour') }}"><i class="glyphicon glyphicon-eye-open"></i> Consultation du jour </a></li>
+	                <li class="divider"></li>
+	                <li><a href="{{ path('medical_consultation_search') }}"><i class="glyphicon glyphicon-search"></i> Consultation par date </a></li>
+	              </ul>
+	            </li>
+            
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Liste d'attente <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ path('medical_salle_show') }}"><i class="glyphicon glyphicon-time"></i> Aujourd'hui </a></li>
+                <li class="divider"></li>
+                <li><a href="{{ path('medical_salle_search') }}"><i class="glyphicon glyphicon-search"></i> Recherhce par date</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} 
+            	<li class="dropdown">
+            		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            			<i class="glyphicon glyphicon-user"></i>
+            				{{ app.user.username }}
+            		</a>
+            		<ul class="dropdown-menu">
+            			<li>
+            				<a href="{{ path('medical_user_change_password') }}">
+            					<i class="glyphicon glyphicon-refresh"></i>
+            					 Changer le mot de passe
+            				</a>
+            			</li>
+            			<li class="divider"></li>
+            			<li>
+            				<a href="{{ path('fos_user_security_logout') }}">
+            					<i class="glyphicon glyphicon-log-out"></i>
+            					Deconnexion
+            				</a>
+            			</li>
+            		</ul>
+            	</li>
+            {% endif %}
+            {% block recherche %}{% endblock %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	{% endblock %}
+
+    <div class="container">
+		{% block body %}{% endblock %}
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block javascript %}
+	    <script src="{{ asset('js/jquery-1.10.2.min.js') }}"></script>
+	    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	    <script src="{{ asset('js/bootstrap-formhelpers.js') }}"></script>
+  	{% endblock %}
+
+	</body>
+</html>

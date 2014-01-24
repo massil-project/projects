@@ -1,0 +1,8 @@
+188932,127.0.0.1,GET,http://localhost/projects/medical/symfony/web/app_dev.php/medical/patient,1390505191,
+628ca8,127.0.0.1,GET,http://localhost/projects/medical/symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DMassilMedicalBundle%253AMedical%253Asearch,1390505190,188932
+7649f1,127.0.0.1,GET,http://localhost/projects/medical/symfony/web/app_dev.php/medical/patient/show/2,1390505205,
+86d81f,127.0.0.1,GET,http://localhost/projects/medical/symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DMassilMedicalBundle%253AMedical%253Asearch,1390505205,7649f1
+6d8298,127.0.0.1,GET,http://localhost/projects/medical/symfony/web/app_dev.php/medical/patient,1390505219,
+5ee4ca,127.0.0.1,GET,http://localhost/projects/medical/symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DMassilMedicalBundle%253AMedical%253Asearch,1390505219,6d8298
+f4ff78,127.0.0.1,GET,http://localhost/projects/medical/symfony/web/app_dev.php/medical/patient/show/2,1390505776,
+c9ca0c,127.0.0.1,GET,http://localhost/projects/medical/symfony/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DMassilMedicalBundle%253AMedical%253Asearch,1390505776,f4ff78
