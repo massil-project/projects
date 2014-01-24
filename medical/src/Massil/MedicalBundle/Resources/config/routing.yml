@@ -12,7 +12,7 @@ medical_patient_home:
     path: /patient/{page}/{message}.{filter}.{direction}
     defaults: { _controller:MassilMedicalBundle:Patient:index,message:no,filter:dateAjout,direction:down,page:1}
     requirements:
-#        page: \d*
+        page: \d*
                 
 medical_patient_show:
     path: /patient/show/{id}/{page}.{message}
