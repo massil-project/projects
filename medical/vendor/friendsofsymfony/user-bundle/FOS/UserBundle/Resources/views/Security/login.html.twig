@@ -1,0 +1,42 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+
+{% block stylesheet %}
+	{{ parent() }}
+	<link href="{{ asset('css/signin.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+	Connexion
+{% endblock %}
+
+{% block fixed_navbar %}{% endblock %}
+
+
+{% block fos_user_content %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin" role="form">
+
+	<h2 class="form-signin-heading">Identifiez-vous !!</h2>
+	
+	{% if error %}
+		<div class="alert alert-danger">
+			<p> Nom d'utilisateur ou mot de passe incorrect</p>
+		</div>
+	{% endif %}
+	
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+    <input type="text" class="form-control" placeholder="Identifiant" id="username" name="_username" value="{{ last_username }}" required="required" autofocus/>
+
+    <input type="password" class="form-control" placeholder="Mot de passe" id="password" name="_password" required="required" />
+
+    <label class="checkbox">
+    	<input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    	Se souvenir de moi
+    </label>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
+    
+</form>
+{% endblock fos_user_content %}
