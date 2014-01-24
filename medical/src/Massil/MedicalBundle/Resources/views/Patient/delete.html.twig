@@ -1,0 +1,30 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block medical_body %}
+<div class="page-header">
+	<h1><i class="glyphicon glyphicon-trash"></i> Supprimer patient : {{ ' '~patient.nom|capitalize~' '~patient.prenom|capitalize }}</h1>
+</div>
+
+<div class="row">
+	<div class="alert alert-warning">
+		<h5>
+			<i class="glyphicon glyphicon-warning-sign"></i>
+			<strong>Attention : </strong> Ce patient va &ecirc;tre supprim&eacute; !
+		</h5> 
+	</div>
+</div>
+
+
+<p> Et&ecirc;s-vous certain de supprimer ce patient ?</p>
+<form method="post" action="{{ path('medical_patient_delete',{'id':patient.id}) }}">
+	<a href="{{ path('medical_patient_show',{'id':patient.id}) }}" class="btn btn-default">
+		<i class="glyphicon glyphicon-chevron-left"></i>
+		Retour au patient
+	</a>
+	<button class="btn btn-danger" type="submit">
+		<i class="glyphicon glyphicon-trash"></i>
+		Supprimer
+	</button>
+	{{ form_rest(form) }}
+</form>
+{% endblock %}

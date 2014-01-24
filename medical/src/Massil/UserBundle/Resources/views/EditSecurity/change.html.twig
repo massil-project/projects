@@ -1,0 +1,102 @@
+{% extends "MassilUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="row">
+
+<div class="col-md-6">
+	<div class="row">
+		<div class="col-md-6"></div>
+		<div class="col-md-6">
+			<h2>Changer votre mot de passe</h2>
+			<br>
+		</div>
+	</div>
+	
+	<div class="row">
+		<form action="{{ path('medical_user_change_password') }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" role="form">
+		    
+		    {% if error is defined %}
+		    	<div class="col-md-6"></div>
+		    	<div class="col-md-6">
+			    	<div class="alert alert-danger">
+			    		{{ error }}
+			    	</div>
+		    	</div>
+		    {% endif %}
+		    
+		    {% if form_errors(form) %}
+		    	<div class="col-md-6"></div>
+		    	<div class="col-md-6">
+			    	<div class="alert alert-danger">
+			    		{{ form_errors(form) }}
+			    	</div>
+		    	</div>
+		    {% endif %}
+		    
+		    {% if form_errors(form.oldPassword) %}
+		    	<div class="col-md-6"></div>
+		    	<div class="col-md-6">
+			    	<div class="alert alert-danger">
+			    		{{ form_errors(form.oldPassword) }}
+			    	</div>
+		    	</div>
+		    {% endif %}
+		    
+		    <div class="form-group">
+		    	<label for="current_password" class="col-sm-6 control-label"> Mot de passe </label>
+		    	<div class="col-sm-6">
+		    		<input type="password" id="current_password" required="required" name="massil_userbundle_changepasswordtype[oldPassword]" class="form-control" placeholder="Mot de passe actuel">
+		    	</div>
+		    </div>
+		    
+		    {% if form_errors(form.newPassword) %}
+		    	<div class="col-md-6"></div>
+		    	<div class="col-md-6">
+			    	<div class="alert alert-danger">
+			    		{{ form_errors(form.newPassword) }}
+			    	</div>
+		    	</div>
+		    {% endif %}
+		    
+		    <div class="form-group">
+		    	<label for="new_password" class="col-sm-6 control-label"> Nouveau mot de passe </label>
+		    	<div class="col-sm-6">
+		    		<input type="password" id="new_password" required="required" name="massil_userbundle_changepasswordtype[newPassword]" class="form-control" placeholder="Nouveau mot de passe">
+		    	</div>
+		    </div>
+		    
+		    {% if form_errors(form.newPasswordConfirm) %}
+		    	<div class="col-md-6"></div>
+		    	<div class="col-md-6">
+			    	<div class="alert alert-danger">
+			    		{{ form_errors(form.newPasswordConfirm) }}
+			    	</div>
+		    	</div>
+		    {% endif %}
+		    
+		    <div class="form-group">
+		    	<label for="new_password_confirmation" class="col-sm-6 control-label"> Confirmation mot de passe </label>
+		    	<div class="col-sm-6">
+		    		<input type="password" id="new_password_confirmation" required="required" name="massil_userbundle_changepasswordtype[newPasswordConfirm]" class="form-control" placeholder="Confirmation nouveau mot de passe">
+		    	</div>
+		    </div>
+		
+		
+			{{ form_widget(form._token) }}
+		    
+		    <div class="row">
+		    <div class="col-md-6"></div>
+		    <div class="col-md-6">
+			    <button class="btn btn-success" type="submit">
+			    	<i class="glyphicon glyphicon-floppy-disk"></i>
+			    		 Enregistrer 
+			    </button>
+		    </div>
+		    </div>
+		    
+		    
+		</form>
+	</div>
+</div>
+</div>
+{% endblock %}

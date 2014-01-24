@@ -1,0 +1,199 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block title %}
+	Dossier : {{ ' '~patient.nom|capitalize~' '~patient.prenom|capitalize }}
+{% endblock %}
+
+{% block medical_body %}
+	<div class="page-header">
+		<h2><i class="glyphicon glyphicon-user"></i> {{ ' '~patient.nom|capitalize~' '~patient.prenom|capitalize }}</h2>
+	</div>
+	
+	{% if message == 'patient_saved' %}
+					
+		<div class="row">
+			<div class="alert alert-info alert-dismissable">
+				<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<h5>
+					<i class="glyphicon glyphicon-ok"></i>
+					<strong>Info : </strong> Patient enregistr&eacute; avec succ&egrave;s
+				</h5>
+			</div>
+		</div>
+				
+			
+	{% elseif message == 'patient_edit'%}
+				
+		<div class="row">
+			<div class="alert alert-info alert-dismissable">
+				<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<h5>
+					<i class="glyphicon glyphicon-ok"></i>
+					<strong>Info : </strong> Patient modifi&eacute; avec succ&egrave;s
+				</h5>
+			</div>
+		</div>	
+	
+	{% elseif message == 'consultation_delete'%}
+				
+		<div class="row">
+			<div class="alert alert-info alert-dismissable">
+				<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<h5>
+					<i class="glyphicon glyphicon-ok"></i>
+					<strong>Info : </strong> Consultation supprim&eacute; avec succ&egrave;s
+				</h5>
+			</div>
+		</div>
+	{% endif %}
+	
+	
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3>
+						<i class="glyphicon glyphicon-folder-open"></i> 
+						 Dossier 
+					</h3>
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-md-4 control-label">Nom</label>
+							<div class="col-md-4">
+								<p class="form-control-static">{{ patient.nom|capitalize }}</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Pr&eacute;nom</label>
+							<div class="col-md-4">
+								<p class="form-control-static">{{ patient.prenom|capitalize }}</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Date de naissance</label>
+							<div class="col-md-4">
+								<p class="form-control-static">{{ patient.dateNaissance|date('d/m/Y') }}</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Sexe</label>
+							<div class="col-md-4">
+								<p class="form-control-static">{{ patient.sexe|capitalize }}</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Situation familiale</label>
+							<div class="col-md-4">
+								<p class="form-control-static">{{ patient.etatCivil|capitalize }}</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Assurance</label>
+							<div class="col-md-4">
+								<p class="form-control-static">
+									{% if patient.assure is null %}
+										Non mention&eacute;e
+									{% else %}
+										{% if patient.assure == 0 %}
+											Non
+										{% else %}
+											Oui
+										{% endif %}
+									{% endif %}
+								</p>
+							</div>
+						</div>
+					</form>
+					<div class="btn-group col-md-12 col-md-offset-2">
+							<a href="{{ path('medical_patient_home') }}" class="btn btn-default" role="button">
+								<i class="glyphicon glyphicon-chevron-left"></i>
+								 Retour &agrave; la liste
+							</a>
+							<a href="{{ path('medical_patient_edit',{'id':patient.id}) }}" class="btn btn-primary" role="button">
+								<i class="glyphicon glyphicon-edit"></i>
+								 Modifier
+							</a>
+							<a href="{{ path('medical_patient_delete',{'id':patient.id}) }}" class="btn btn-danger" role="button">
+								<i class="glyphicon glyphicon-trash"></i>
+								 Supprimer
+							</a>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3>
+							<i class="glyphicon glyphicon-pushpin"></i> 
+							 Consultations
+						</h3>
+					</div>
+					<div class="panel-body col-md-12">
+						{% if consultations|length > 0 %}
+						<table class="table table-hover">
+							<thead>
+								<th>Date de consultation</th>
+								<th>Options</th>
+							</thaed>
+							<tbody>
+								{% for consultation in consultations %}
+									<tr>
+										<td>{{ consultation.date|date('d/m/Y') }}</td>
+										<td>
+											<div class="btn-group">
+												<a href="{{ path('medical_consultation_show',{'id':consultation.id}) }}" class="btn btn-default">
+													<i class="glyphicon glyphicon-folder-open"></i>
+													 Details
+												</a>
+												<a href="{{ path('medical_consultation_edit',{'id':consultation.id}) }}" class="btn btn-primary">
+													<i class="glyphicon glyphicon-edit"></i>
+													 Modifier
+												</a>
+												<a href="{{ path('medical_consultation_delete',{'id':consultation.id}) }}" class="btn btn-danger">
+													<i class="glyphicon glyphicon-trash"></i>
+													Supprimer
+												</a>
+											</div>
+										</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+						<div class="row">
+							<div class="col-md-6">
+								<ul class="pagination">
+										<li {% if page==1 %}class="disabled"{% endif %}>
+											<a href="{{ path('medical_patient_show',{'id':patient.id,'page':(page-1)}) }}">
+												<i class="glyphicon glyphicon-chevron-left"></i>
+											</a>
+										</li>
+									{% for p in range(1,numberPages) %}
+										<li {% if p==page %}class="active"{% endif %}>
+											<a href="{{ path('medical_patient_show',{'id':patient.id,'page':p}) }}">{{ p }}</a>
+										</li>
+									{% endfor %}
+										<li {% if page==numberPages %}class="disabled"{% endif %}>
+											<a href="{{ path('medical_patient_show',{'id':patient.id,'page':(page+1)}) }}">
+												<i class="glyphicon glyphicon-chevron-right"></i>
+											</a>
+										</li>
+								</ul>
+							</div>
+						{% endif %}
+						<div class="col-md-6" style="padding-top: 20px;">
+							<a href="{{ path('medical_consultation_add',{'id':patient.id}) }}" class="btn btn-success">
+								<i class="glyphicon glyphicon-plus-sign"></i>
+								 Ajouter une consultation
+							</a>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	
+{% endblock %}

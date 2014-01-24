@@ -1,0 +1,7 @@
+parameters:
+#    massil_medical.example.class: Massil\MedicalBundle\Example
+
+services:
+#    massil_medical.example:
+#        class: %massil_medical.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

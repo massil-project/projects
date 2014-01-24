@@ -1,0 +1,283 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block title %}
+	Liste des patients
+{% endblock %}
+{% block medical_body %}
+<div class="page-header">
+	<h1>
+		{% if message == 'recherche' %}
+			Resultats de la recherche :
+		{% else %}
+			Patients
+		{% endif %}
+	 	<span class="badge">Tous les patients : {{ patients|length }}</span>
+	</h1>
+</div>
+
+
+{% if message == 'patient_delete' %}
+	<div class="row">
+		<div class="alert alert-info">
+			<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<h5>
+				<i class="glyphicon glyphicon-ok"></i>
+				<strong>Info : </strong> Patient supprim&eacute; avec succ&egrave;s
+			</h5>
+		</div>
+	</div>
+
+{% elseif message == 'recherche' %}
+	<div class="row">
+		<div class="alert alert-info">
+			<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<h5>
+				<i class="glyphicon glyphicon-ok"></i>
+				<strong>Info : </strong> Recherche effectu&eacute; avec succ&egrave;s
+			</h5>
+		</div>
+	</div>
+	
+{% elseif message == 'patient_exist' %}
+	<div class="row">
+		<div class="alert alert-info">
+			<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<h5>
+				<i class="glyphicon glyphicon-info-sign"></i>
+				 Ce patient est d&eacute;ja inscrit dans la liste d'attente. 
+			</h5>
+		</div>
+	</div>
+{% endif %}
+
+{% if patients|length > 0 %}
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-hover" id="patient-table">
+				<thead>
+					<tr>
+						<th>
+							{% if filter == 'number' %}
+								{% if direction == 'down' %}
+									<i class="glyphicon glyphicon-sort-by-order-alt"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'number','direction':'up'}) }}">
+										#
+									</a>
+								{% else %}
+									<i class="glyphicon glyphicon-sort-by-order"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'number','direction':'down'}) }}">
+										#
+									</a>								
+								{% endif %}
+							{% else %}
+									<a href="{{ path('medical_patient_home',{'filter':'number','direction':'up'}) }}">
+										#
+									</a>
+							{% endif %}
+						</th>
+						<th>
+							{% if filter == 'nom' %}
+								{% if direction == 'down' %}
+									<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'nom','direction':'up'}) }}">
+										Nom
+									</a>
+								{% else %}
+									<i class="glyphicon glyphicon-sort-by-alphabet"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'nom','direction':'down'}) }}">
+										Nom
+									</a>								
+								{% endif %}
+							{% else %}
+									<a href="{{ path('medical_patient_home',{'filter':'nom','direction':'up'}) }}">
+										Nom
+									</a>
+							{% endif %}
+						</th>
+						<th>
+							{% if filter == 'prenom' %}
+								{% if direction == 'down' %}
+									<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'prenom','direction':'up'}) }}">
+										Pr&eacute;nom
+									</a>
+								{% else %}
+									<i class="glyphicon glyphicon-sort-by-alphabet"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'prenom','direction':'down'}) }}">
+										Pr&eacute;nom
+									</a>								
+								{% endif %}
+							{% else %}
+									<a href="{{ path('medical_patient_home',{'filter':'prenom','direction':'up'}) }}">
+										Pr&eacute;nom
+									</a>
+							{% endif %}
+						</th>
+						<th>
+							{% if filter == 'dateNaissance' %}
+								{% if direction == 'down' %}
+									<i class="glyphicon glyphicon-sort-by-attributes"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'dateNaissance','direction':'up'}) }}">
+										Date naissance
+									</a>
+								{% else %}
+									<i class="glyphicon glyphicon-sort-by-attributes-alt"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'dateNaissance','direction':'down'}) }}">
+										Date naissance
+									</a>								
+								{% endif %}
+							{% else %}
+									<a href="{{ path('medical_patient_home',{'filter':'dateNaissance','direction':'up'}) }}">
+										Date naissance
+									</a>
+							{% endif %}
+						</th>
+						<th>
+							{% if filter == 'sexe' %}
+								{% if direction == 'down' %}
+									<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'sexe','direction':'up'}) }}">
+										Sexe
+									</a>
+								{% else %}
+									<i class="glyphicon glyphicon-sort-by-alphabet"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'sexe','direction':'down'}) }}">
+										Sexe
+									</a>								
+								{% endif %}
+							{% else %}
+									<a href="{{ path('medical_patient_home',{'filter':'sexe','direction':'up'}) }}">
+										Sexe
+									</a>
+							{% endif %}
+						</th>
+						<th>
+							{% if filter == 'assurance' %}
+								{% if direction == 'down' %}
+									<i class="glyphicon glyphicon-sort-by-attributes"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'assurance','direction':'up'}) }}">
+										Assurance
+									</a>
+								{% else %}
+									<i class="glyphicon glyphicon-sort-by-attributes-alt"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'assurance','direction':'down'}) }}">
+										Assurance
+									</a>								
+								{% endif %}
+							{% else %}
+									<a href="{{ path('medical_patient_home',{'filter':'assurance','direction':'up'}) }}">
+										Assurance
+									</a>
+							{% endif %}
+						</th>
+						<th>
+							{% if filter == 'situation' %}
+								{% if direction == 'down' %}
+									<i class="glyphicon glyphicon-sort-by-alphabet"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'situation','direction':'up'}) }}">
+										Situation familiale
+									</a>
+								{% else %}
+									<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i>
+									<a href="{{ path('medical_patient_home',{'filter':'situation','direction':'down'}) }}">
+										Situation familiale
+									</a>								
+								{% endif %}
+							{% else %}
+									<a href="{{ path('medical_patient_home',{'filter':'situation','direction':'up'}) }}">
+										Situation familiale
+									</a>
+							{% endif %}
+						</th>
+						<th>Options</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for patient in patients %}
+						<tr>
+							<td>{{ loop.index }}</td>
+							<td>{{ patient.nom|capitalize }}</td>
+							<td>{{ patient.prenom|capitalize }}</td>
+							<td>{{ patient.dateNaissance|date('d/m/Y') }}</td>
+							<td>{{ patient.sexe|capitalize }}</td>
+							<td>
+								{% if patient.assure == true %}
+									Oui
+								{% else %}
+									Non
+								{% endif %}
+							</td>
+							<td>{{ patient.etatCivil|capitalize }}</td>
+							<td>
+								<div class="btn-group">
+									<a href="{{ path('medical_patient_show',{'id':patient.id}) }}" class="btn btn-default">
+										<i class="glyphicon glyphicon-folder-open"></i>
+										 Details
+									</a>
+									<a href="{{ path('medical_consultation_add',{'id':patient.id}) }}" class="btn btn-success">
+										<i class="glyphicon glyphicon-pushpin"></i>
+										 Consulter
+									</a>
+									<a href="{{ path('medical_patient_edit',{'id':patient.id}) }}" class="btn btn-primary">
+										<i class="glyphicon glyphicon-edit"></i>
+										 Modifier
+									</a>
+									<a href="{{ path('medical_patient_delete',{'id':patient.id}) }}" class="btn btn-danger">
+										<i class="glyphicon glyphicon-trash"></i>
+										 Supprimer
+									</a>
+									<a href="{{ path('medical_salle_add_patient',{'id':patient.id}) }}" class="btn btn-info">
+										<i class="glyphicon glyphicon-time"></i>
+										 Liste d'attente
+									</a>
+									
+								</div>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% elseif patients|length == 0 %}
+	{% if message == 'recherche' %}
+		<div class="row">
+			<div class="alert alert-info">
+				<p>Aucun r&eacute;sultat pour la recherche.</p>
+			</div>
+		</div>
+	{% else %}
+		<div class="row">
+			<div class="alert alert-info">
+				<p>Aucun patient a afficher.</p>
+			</div>
+		</div>
+	{% endif %}
+{% endif %}
+
+{% if patients|length > 0 %}
+
+<div class="row">
+<div class="col-md-4"></div>
+<div>
+	<ul class="pagination">
+		<li {% if page==1 %}class="disabled"{% endif %}>
+			<a href="{{ path('medical_patient_home',{'page':(page-1)}) }}">
+				<i class="glyphicon glyphicon-chevron-left"></i>
+			</a>
+		</li>
+		{% for p in range(1,numberPages) %}
+			<li {% if p==page %}class="active"{% endif %}>
+				<a href="{{ path('medical_patient_home',{'page':p}) }}">{{ p }}</a>
+			</li>
+		{% endfor %}
+			<li {% if page==numberPages %}class="disabled"{% endif %}>
+				<a href="{{ path('medical_patient_home',{'page':(page+1)}) }}">
+					<i class="glyphicon glyphicon-chevron-right"></i>
+				</a>
+			</li>
+	</ul>
+</div>
+</div>
+{% endif %}
+{% endblock %}

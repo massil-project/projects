@@ -1,0 +1,76 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block title %}
+	Consultations du jour
+{% endblock %}
+
+{% block medical_body %}
+	<div class="page-header">
+		<h1>
+			<i class="glyphicon glyphicon-calendar"></i>
+			Consultations du : 
+			{% if dateDuJour is defined %}
+				{{ dateDuJour }}
+			{% else %}
+				{{ "now"|date('d-m-Y') }}
+			{% endif %}
+		</h1>
+		<p><span class="badge">Total : {{ consultations|length }}</span></p>
+	</div>
+	
+	<div class="row">
+		{% if consultations|length == 0 %}
+			<div class="alert alert-info">
+				<p>
+					{% if dateDuJour is defined %}
+						<i class="glyphicon glyphicon-info-sign"></i> Aucune consultation le : {{ dateDuJour }}
+					{% else %}
+						<i class="glyphicon glyphicon-info-sign"></i> Aucune consultation aujourd'hui.
+					{% endif %}
+				</p>
+			</div>
+		{% elseif consultations|length > 0 %}
+			<div class="col-md-12">
+				<table class="table table-hover">
+					<thead>
+						<th>#</th>
+						<th>Nom et pr&eacute;nom</th>
+						<th>Date</th>
+						<th>Heure</th>
+						<th>Options</th>
+					</thead>
+					<tbody>
+						{% for consultation in consultations %}
+							<tr>
+								<td>{{ loop.index }}</td>
+								<td>{{ consultation.patient.nom|capitalize~' '~consultation.patient.prenom|capitalize }}</td>
+								<td>Consult&eacute; le : {{ consultation.date|date('d/m/Y') }}</td>
+								<td>&agrave; : {{ consultation.date|date('H')~'h'~consultation.date|date('i') }}</td>
+								<td>
+									<div class="btn-group">
+										<a href="{{ path('medical_patient_show',{'id':consultation.patient.id}) }}" class="btn btn-default">
+											<i class="glyphicon glyphicon-folder-open"></i>
+											 Dossier du patient
+										</a>
+										<a href="{{ path('medical_consultation_show',{'id':consultation.id}) }}" class="btn btn-success">
+											<i class="glyphicon glyphicon-folder-open"></i>
+											 D&eacute;tails
+										</a>
+										<a href="{{ path('medical_consultation_edit',{'id':consultation.id}) }}" class="btn btn-primary">
+											<i class="glyphicon glyphicon-edit"></i>
+											 Modifier 
+										</a>
+										<a href="{{ path('medical_consultation_delete',{'id':consultation.id}) }}" class="btn btn-danger">
+											<i class="glyphicon glyphicon-trash"></i>
+											 Supprimer
+										</a>
+									</div>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+<div class="row">
+<div class="col-md-6">
+<div class="well">
+	<form method="post" {{ form_enctype(form) }} role="form">
+		{{ form_errors(form) }}
+		<div class="form-group">
+			{{ form_errors(form.nom) }}
+			{{ form_label(form.nom,"Nom") }}
+			{{ form_widget(form.nom,{'attr':{'class':'form-control','placeholder':'Nom du patient'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_errors(form.prenom) }}
+			{{ form_label(form.prenom,"Prenom") }}
+			{{ form_widget(form.prenom,{'attr':{'class':'form-control','placeholder':'Prenom du patient'}}) }}
+		</div>
+		<div class="form-group bfh-datepicker" 
+			data-max="today"
+			{% if formType == 'add' %}
+				data-name="massil_medicalbundle_patienttype[dateNaissance]" 
+			{% elseif formType == 'edit'%}
+				data-name="massil_medicalbundle_patientedittype[dateNaissance]" 
+			{% endif %}
+			data-format="d/m/y"
+		>
+			{{ form_errors(form.dateNaissance) }}
+			{{ form_label(form.dateNaissance,"Date de naissance") }}
+			{{ form_widget(form.dateNaissance) }}
+		</div>
+		<div class="form-group">
+			{{ form_errors(form.sexe) }}
+			{{ form_label(form.sexe,"Sexe") }}
+			{{ form_widget(form.sexe,{'attr':{'class':'form-control'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_errors(form.assure) }}
+			{{ form_label(form.assure,"Assurance") }}
+			{{ form_widget(form.assure,{'attr':{'class':'form-control'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_errors(form.etatCivil) }}
+			{{ form_label(form.etatCivil,"Situation familiale") }}
+			{{ form_widget(form.etatCivil,{'attr':{'class':'form-control'}}) }}
+		</div>			
+		{{ form_rest(form) }}
+		<button type="submit" class="btn btn-success"> 
+		<i class="glyphicon glyphicon-floppy-disk"></i>
+		 Enregistrer
+		</button>
+	</form>
+</div>
+</div>
+</div>

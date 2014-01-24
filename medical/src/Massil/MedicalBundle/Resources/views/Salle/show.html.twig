@@ -1,0 +1,108 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block title %}
+	Liste d'attente
+{% endblock %}
+
+{% block medical_body %}
+
+<div class="page-header">
+	<h1>
+		<i class="glyphicon glyphicon-time"></i>
+		 Liste d'attente du : {{ dateDuJour }}
+	</h1>
+</div>
+
+<div class="row">
+	<div class="row">
+	{% if patients|length > 0 %}
+		<div class="col-md-12">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nom et pr&eacute;nom</th>
+						<th>Heure d'arriv&eacute;</th>
+						<th>Rendez-vous</th>
+						<th>Options</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for patient in patients %}
+						<tr>
+							<td>{{ loop.index }}</td>
+							<td>{{ patient.nom|capitalize~' '~patient.prenom|capitalize }}</td>
+							<td>{{ patient.patientSalleAttentes[0].dateArrive|date('H:i') }}</td>
+							<td>
+							{% if patient.patientSalleAttentes[0].etatPatient == 'pass&eacute;' %}
+								<button class="btn btn-success">
+								
+							{% elseif patient.patientSalleAttentes[0].etatPatient == 'annul&eacute;'%}
+								<button class="btn btn-danger">
+								
+							{% else %}
+								<button class="btn btn-info">
+							{% endif %}
+							
+								{{ patient.patientSalleAttentes[0].etatPatient|capitalize|raw }}
+							</button>
+							</td>
+							<td>
+								<div class="btn-group">
+									<a href="{{ path('medical_salle_change',{'id':patient.id,'change':'annuler'}) }}" class="btn btn-danger">
+										<i class="glyphicon glyphicon-time-sign"></i>
+										 Annuler 
+									</a>
+									<a href="{{ path('medical_salle_change',{'id':patient.id,'change':'passer'}) }}" class="btn btn-success">
+										Passer le patient
+									</a>
+									<a href="{{ path('medical_salle_change',{'id':patient.id,'change':'attente'}) }}" class="btn btn-info">
+										Mise en attente
+									</a>
+								</div>
+								<a href="{{ path('medical_patient_show',{'id':patient.id}) }}" class="btn btn-default">
+									<i class="glyphicon glyphicon-folder-open"></i>
+									 Dossier
+								</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	{% else %}
+	<div class="alert alert-info">
+		<i class="glyphicon glyphicon-info-sign"></i> 
+		 Aucun patient inscrit dans cet date : {{ dateDuJour }}
+	</div>
+	{% endif %}
+	
+	</div>
+</div>
+
+{% if patients|length >0 %}
+<div class="row">
+<div class="col-md-4"></div>
+<div>
+	<ul class="pagination">
+		<li {% if page==1 %}class="disabled"{% endif %}>
+			<a href="{{ path('medical_salle_show',{'page':(page-1)}) }}">
+				<i class="glyphicon glyphicon-chevron-left"></i>
+			</a>
+		</li>
+		{% for p in range(1,numberPages) %}
+			<li {% if p==page %}class="active"{% endif %}>
+				<a href="{{ path('medical_salle_show',{'page':p}) }}">{{ p }}</a>
+			</li>
+		{% endfor %}
+			<li {% if page==numberPages %}class="disabled"{% endif %}>
+				<a href="{{ path('medical_salle_show',{'page':(page+1)}) }}">
+					<i class="glyphicon glyphicon-chevron-right"></i>
+				</a>
+			</li>
+	</ul>
+</div>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,104 @@
+<div class="col-md-12">
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+			<label class="col-md-6 control-label"> Age  </label>
+				<div class="col-md-6">
+					<p class="form-control-static">
+						{% if consultation.age is null %}
+							Non mention&eacute;e
+						{% else %}
+							{% if date(patient.dateNaissance) < consultation.date('-36months') %}
+								{{ consultation.age }} Ans
+							{% else %}
+								{{ consultation.age }} Mois
+							{% endif %}
+						{% endif %}
+					</p>
+				</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-6 control-label"> Poids </label>
+				<div class="col-md-6">
+					<p class="form-control-static">
+						{% if consultation.poids is null %}
+							Non mention&eacute;e
+						{% else %}
+							{{ consultation.poids }} Kgs
+						{% endif %}
+					</p>
+				</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-6 control-label"> Taille </label>
+				<div class="col-md-6">
+					<p class="form-control-static">
+						{% if consultation.taille is null %}
+							Non mention&eacute;e
+						{% else %}
+							{{ consultation.taille }} Cm
+						{% endif %}
+					</p>
+				</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-6 control-label"> Tension arterielle </label>
+			<div class="col-md-6">
+				<p class="form-control-static">
+					{% if consultation.tensionArterielle is null %}
+						Non mention&eacute;e
+					{% else %}
+						{{ consultation.tensionArterielle }} Cm/Hg
+					{% endif %}
+				</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-6 control-label"> Temperature </label>
+				<div class="col-md-6">
+					<p class="form-control-static">
+						{% if consultation.temperature is null %}
+							Non mention&eacute;e
+						{% else %}
+							{{ consultation.temperature }} C&deg;
+						{% endif %}
+					</p>
+				</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-6 control-label"> Perim&eacute;tre thoracique </label>
+				<div class="col-md-6">
+					<p class="form-control-static">
+						{% if consultation.perimetreThoracique is null %}
+							Non mention&eacute;e
+						{% else %}
+							{{ consultation.perimetreThoracique }} Cm
+						{% endif %}
+					</p>
+				</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-6 control-label"> Perim&eacute;tre brachial </label>
+				<div class="col-md-6">
+					<p class="form-control-static">
+						{% if consultation.perimetreBrachial is null %}
+							Non mention&eacute;e
+						{% else %}
+							{{ consultation.perimetreBrachial }} Cm
+						{% endif %}
+					</p>
+				</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-6 control-label"> Scap triceps </label>
+				<div class="col-md-6">
+					<p class="form-control-static">
+						{% if consultation.scapTriceps is null %}
+							Non mention&eacute;e
+						{% else %}
+							{{ consultation.scapTriceps }} Cm
+						{% endif %}
+					</p>
+				</div>
+		</div>
+	</form>
+</div>

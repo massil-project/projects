@@ -1,0 +1,100 @@
+	{% if form_errors(form) %}
+		<div class="alert alert-danger">
+			{{ form_errors(form) }}
+		</div>
+		<br>
+	{% endif %}
+	<div class="input-group">
+		{% if form_errors(form.age) %}
+		<div class="alert alert-danger">
+		{{ form_errors(form.age) }}	
+		</div>
+		{% endif %}
+		<span class="input-group-addon"><strong>Age</strong></span>
+		{{ form_widget(form.age,{'attr':{'class':'form-control','placeholder':'Age du patient'}}) }}
+		<span class="input-group-addon">
+		{% if date(patient.dateNaissance) < date('-36months') %}
+			Ann&egrave;es
+		{% else %}
+			Mois
+		{% endif %}
+		</span>
+	</div>
+	<br>
+	<div class="input-group">
+		{% if form_errors(form.poids) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.poids) }}
+			</div>
+		{% endif %}
+		<span class="input-group-addon"><strong>Poids</strong></span>
+		{{ form_widget(form.poids,{'attr':{'class':'form-control','placeholder':'Poids du patient'}}) }}
+		<span class="input-group-addon">Kgs</span>
+	</div>
+	<br>
+	<div class="input-group">
+		{% if form_errors(form.taille) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.taille) }}
+			</div>
+		{% endif %}
+		<span class="input-group-addon"><strong>Taille</strong></span>
+		{{ form_widget(form.taille,{'attr':{'class':'form-control','placeholder':'Taille du patient'}}) }}
+		<span class="input-group-addon">Cm</span>
+	</div>
+	<br>
+	<div class="input-group">
+		{% if form_errors(form.tensionArterielle) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.tensionArterielle) }}
+			</div>
+		{% endif %}
+		<span class="input-group-addon"><strong>Tension Arteri&egrave;lle</strong></span>
+		{{ form_widget(form.tensionArterielle,{'attr':{'class':'form-control','placeholder':'Tension arterielle du patient'}}) }}
+		<span class="input-group-addon">cmHg</span>
+	</div>
+	<br>
+	<div class="input-group">
+		{% if form_errors(form.temperature) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.temperature) }}
+			</div>
+		{% endif %}
+		<span class="input-group-addon"><strong>Temp&eacute;rature</strong></span>
+		{{ form_widget(form.temperature,{'attr':{'class':'form-control','placeholder':'Temperature du patient'}}) }}
+		<span class="input-group-addon">&deg;C</span>
+	</div>
+	<br>
+	<div class="input-group">
+		{% if form_errors(form.perimetreThoracique) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.perimetreThoracique) }}
+			</div>
+		{% endif %}
+		<span class="input-group-addon"><strong>P&egrave;rim. Thoracique</strong></span>
+		{{ form_widget(form.perimetreThoracique,{'attr':{'class':'form-control','placeholder':'Perimetre thoracique du patient'}}) }}
+		<span class="input-group-addon">Cm</span>
+	</div>
+	<br>
+	<div class="input-group">
+		{% if form_errors(form.perimetreBrachial) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.perimetreBrachial) }}
+			</div>
+		{% endif %}
+		<span class="input-group-addon"><strong>P&egrave;rim. Brachial</strong></span>
+		{{ form_widget(form.perimetreBrachial,{'attr':{'class':'form-control','placeholder':'Perimetre brachiale du patient'}}) }}
+		<span class="input-group-addon">Cm</span>
+	</div>
+	<br>
+	<div class="input-group">
+		{% if form_errors(form.scapTriceps) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.scapTriceps) }}
+			</div>
+		{% endif %}
+		<span class="input-group-addon"><strong>Scap Triceps</strong></span>
+		{{ form_widget(form.scapTriceps,{'attr':{'class':'form-control','placeholder':'Sacap Triceps du patient'}}) }}
+		<span class="input-group-addon">Cm</span>
+	</div>
+	<br>

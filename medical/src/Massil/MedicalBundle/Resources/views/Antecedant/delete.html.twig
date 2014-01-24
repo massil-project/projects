@@ -1,0 +1,33 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block medical_body %}
+<div class="page-header">
+	<h1><i class="glyphicon glyphicon-trash"></i> Supprimer antecedant : {{ ' '~patient.nom|capitalize~' '~patient.prenom|capitalize }}</h1>
+</div>
+
+<div class="row">
+	<div class="alert alert-warning">
+		<i class="glyphicon glyphicon-warning-sign"></i>
+		<strong>Attention : </strong> Cet antecedant va &ecirc;tre supprim&eacute; ! 
+	</div>
+</div>
+
+<p> Et&ecirc;s-vous certain de supprimer cet ant&eacute;cedant ?</p>
+<div class="row">
+<div class="well col-md-8">
+	<h4>{{ antecedant.type }}</h4>
+	<p>{{ antecedant.contenu|raw }}</p>
+</div>
+</div>
+<form method="post" action="{{ path('medical_antecedant_delete',{'id':antecedant.id}) }}">
+	<a href="{{ path('medical_consultation_add',{'id':patient.id}) }}" class="btn btn-default">
+		<i class="glyphicon glyphicon-chevron-left"></i>
+		Retour a la consultation
+	</a>
+	<button class="btn btn-danger" type="submit">
+		<i class="glyphicon glyphicon-trash"></i>
+		Supprimer
+	</button>
+	{{ form_rest(form) }}
+</form>
+{% endblock %}

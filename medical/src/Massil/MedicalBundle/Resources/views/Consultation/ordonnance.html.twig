@@ -1,0 +1,6 @@
+{% if form_errors(form.ordonnance.contenu) %}
+	<div class="alert alert-danger">
+		{{ form_errors(form.ordonnance.contenu) }}
+	</div>
+{% endif %}
+{{ form_widget(form.ordonnance.contenu,{'attr':{'class':'massil_ordonnance'}}) }}

@@ -1,0 +1,99 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block title %}
+	Consultation: details
+{% endblock %}
+
+{% block medical_body %}
+	<div class="page-header">
+		<h2><i class="glyphicon glyphicon-folder-open"></i> Consultation : {{ ' '~patient.nom|capitalize ~ ' '~ patient.prenom|capitalize }} </h2>
+		<i> Le : {{ consultation.date|date('d/m/y') }} &agrave; {{ consultation.date|date('H')~'h'~consultation.date|date('i') }}</i>
+		<br><br>
+	{% if message == 'consultation_saved' %}
+		<div class="row">
+			<div class="alert alert-info alert-dismissable">
+				<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<h5>
+					<i class="glyphicon glyphicon-ok"></i>
+					<strong>Info : </strong> Consultation enregistr&eacute; avec succ&egrave;s
+				</h5>
+			</div>
+		</div>
+	
+	
+	{% elseif message == 'consultation_edit' %}
+		<div class="row">
+			<div class="alert alert-info alert-dismissable">
+				<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<h5>
+					<i class="glyphicon glyphicon-ok"></i>
+					<strong>Info : </strong> Consultation modifi&eacute; avec succ&egrave;s
+				</h5>
+			</div>
+		</div>
+
+	{% endif %}
+	
+	
+		<div class="btn-group">
+			<a href="{{ path('medical_patient_show',{'id':patient.id}) }}" class="btn btn-default">
+				<i class="glyphicon glyphicon-chevron-left"></i>
+				Retour au patient
+			</a>
+			<a href="{{ path('medical_consultation_edit',{'id':consultation.id}) }}" class="btn btn-primary">
+				<i class="glyphicon glyphicon-edit"></i>
+				Modifier cette consultation
+			</a>
+			<a href="{{ path('medical_consultation_delete',{'id':consultation.id}) }}" class="btn btn-danger">
+				<i class="glyphicon glyphicon-trash"></i>
+				Supprimer cette consultation
+			</a>
+		</div>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Patient</h4>
+				</div>
+				<div class="panel-body">
+					{% include "MassilMedicalBundle:Consultation:patient.html.twig" %}
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4> Constantes vitales</h4>
+				</div>
+				<div class="panel-body">
+					{% include "MassilMedicalBundle:Consultation:consul-details-vital.html.twig" %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4> Examens et diagnostic</h4>
+				</div>
+				<div class="panel-body">
+					{% include "MassilMedicalBundle:Consultation:consul-details-examen.html.twig" %}
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4> Ordonnance</h4>
+				</div>
+				<div class="panel-body">
+					{% include "MassilMedicalBundle:Consultation:consul-details-ordonnance.html.twig" %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

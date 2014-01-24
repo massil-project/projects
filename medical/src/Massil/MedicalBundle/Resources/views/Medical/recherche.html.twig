@@ -1,0 +1,95 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block title %}
+	Recherche Avance 
+{% endblock %}
+
+{% block medical_body %}
+<div class="page-header">
+	<h1><i class="glyphicon glyphicon-search"></i> Recherche avanc&eacute; :</h1>
+</div>
+
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<div class="well">
+			<form method="post" {{ form_enctype(form) }} role="form">
+				
+				{% if form_errors(form) %}
+					<div class="alert alert-danger">
+						{{ form_errors(form) }}
+					</div>
+				{% endif %}
+				
+				<div class="from-group">
+					
+					{% if form_errors(form.search) %}
+					<div class="alert alert-danger">
+						{{ form_errors(form.search) }}
+					</div>
+					{% endif %}
+					
+					{{ form_widget(form.search,{'attr':{'class':'form-control','placeholder':'Nom ou prenom d\'un patient'}}) }}
+				</div>
+				<br>
+				<div class="from-group">
+					
+					{% if form_errors(form.age) %}
+					<div class="alert alert-danger">
+						{{ form_errors(form.age) }}
+					</div>
+					{% endif %}
+					
+					{{ form_label(form.age,"Age") }}
+					
+					{{ form_widget(form.age,{'attr':{'class':'form-control'}}) }}
+				</div>
+				<br>
+				<div class="from-group">
+					
+					{% if form_errors(form.sexe) %}
+					<div class="alert alert-danger">
+						{{ form_errors(form.sexe) }}
+					</div>
+					{% endif %}
+					
+					{{ form_label(form.sexe,"Sexe") }}
+					
+					{{ form_widget(form.sexe,{'attr':{'class':'form-control'}}) }}
+				</div>
+				<br>
+				<div class="from-group">
+					
+					{% if form_errors(form.etatCivil) %}
+					<div class="alert alert-danger">
+						{{ form_errors(form.etatCivil) }}
+					</div>
+					{% endif %}
+					
+					{{ form_label(form.etatCivil,"Situation familiale") }}
+					
+					{{ form_widget(form.etatCivil,{'attr':{'class':'form-control'}}) }}
+				</div>
+				<br>
+				<div class="from-group">
+					
+					{% if form_errors(form.assurance) %}
+					<div class="alert alert-danger">
+						{{ form_errors(form.assurance) }}
+					</div>
+					{% endif %}
+					
+					{{ form_label(form.assurance,"Assurance") }}
+					
+					{{ form_widget(form.assurance,{'attr':{'class':'form-control'}}) }}
+				</div>
+				<br>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-lg">Rechercher <i class="glyphicon glyphicon-search"></i></button>
+				</div>
+				{{ form_rest(form) }}
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

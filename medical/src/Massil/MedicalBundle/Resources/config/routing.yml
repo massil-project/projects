@@ -1,0 +1,116 @@
+medical_home:
+    path: /{page}
+    defaults: { _controller:MassilMedicalBundle:Medical:index,page:1}
+    requirements:
+        page: \d*
+
+medical_patient_add:
+    path: /patient/add
+    defaults: { _controller:MassilMedicalBundle:Patient:add }
+
+medical_patient_home:
+    path: /patient/{page}/{message}.{filter}.{direction}
+    defaults: { _controller:MassilMedicalBundle:Patient:index,message:no,filter:dateAjout,direction:down,page:1}
+    requirements:
+#        page: \d*
+                
+medical_patient_show:
+    path: /patient/show/{id}/{page}.{message}
+    defaults: { _controller:MassilMedicalBundle:Patient:show ,page:1,message:no}
+    requirements:
+        id: \d*
+        page: \d*
+    
+        
+medical_patient_edit:
+    path: /patient/edit/{id}
+    defaults: { _controller:MassilMedicalBundle:Patient:edit}
+    requirements:
+        id: \d*
+        
+medical_patient_delete:
+    path: /patient/delete/{id}
+    defaults: { _controller:MassilMedicalBundle:Patient:delete}
+    requirements:
+        id: \d*
+        
+medical_consultation_add:
+    path: /patient/{id}/consultation/add/{message}
+    defaults: { _controller:MassilMedicalBundle:Consultation:add,message:no}
+    requirements:
+        id: \d*
+
+medical_consultation_edit:
+    path: /consultation/edit/{id}
+    defaults: { _controller:MassilMedicalBundle:Consultation:edit }
+    requirements:
+        id: \d*
+        
+medical_consultation_show:
+    path: /consultation/show/{id}/{message}
+    defaults: { _controller:MassilMedicalBundle:Consultation:show , message:no}
+    requirements:
+        id: \d*
+        
+medical_consultation_delete:
+    path: /consultation/delete/{id}
+    defaults: { _controller:MassilMedicalBundle:Consultation:delete }
+    requirements:
+        id: \d*
+        
+medical_antecedant_add:
+    path: /consultation/{id}/antecedant/add
+    defaults: { _controller:MassilMedicalBundle:Antecedant:add }
+    requirements:
+        id: \d*
+        
+medical_antecedant_edit:
+    path: /antecedant/edit/{id}
+    defaults: { _controller:MassilMedicalBundle:Antecedant:edit }
+    requirements:
+        id: \d*
+        
+medical_antecedant_delete:
+    path: /antecedant/delete/{id}
+    defaults: { _controller:MassilMedicalBundle:Antecedant:delete }
+    requirements:
+        id: \d*
+        
+medical_recherche:
+    path: /recherche
+    defaults: { _controller:MassilMedicalBundle:Medical:recherche }
+    
+medical_recherche_avance:
+    path: /recherche/avance
+    defaults: { _controller:MassilMedicalBundle:Medical:rechercheAvance }
+    
+medical_consultation_jour:
+    path: /consultation/jour
+    defaults: { _controller:MassilMedicalBundle:Consultation:jour }
+    
+medical_consultation_search:
+    path: /consultation/search
+    defaults: { _controller:MassilMedicalBundle:Consultation:search }
+    
+medical_salle_show:
+    path: /salle/show/{page}/{message}
+    defaults: { _controller:MassilMedicalBundle:Salle:show,message:no,page:1}
+    requirements:
+        page: \d*
+    
+medical_salle_add_patient:
+    path: /salle/add/patient/{id}
+    defaults: { _controller:MassilMedicalBundle:Salle:add}
+    requirements:
+        id: \d*
+        
+medical_salle_change:
+    path: /salle/change/{id}/{change}
+    defaults: { _controller:MassilMedicalBundle:Salle:changeState ,change:default}
+    requirements:
+        id: \d*
+        
+medical_salle_search:
+    path: /salle/search
+    defaults: { _controller:MassilMedicalBundle:Salle:search }
+    

@@ -1,0 +1,44 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block title %}
+	Recherche de consultation
+{% endblock %}
+
+{% block medical_body %}
+
+<div class="page-header">
+	<h1><i class="glyphicon glyphicon-search"></i> Recherche de consultation par date </h1>
+</div>
+
+<div class="row">
+	<div class="col-md-8">
+		<div class="well">
+			<form method="post" {{ form_enctype(form) }} role="form">
+			
+			{% if form_errors(form) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form) }}
+				</div>
+			{% endif %}
+				<div class="form-group bfh-datepicker" data-max="today" data-name="massil_medicalbundle_consultationsearchtype[date]" data-format="d/m/y">
+					{% if form_errors(form.date) %}
+						<div class="alert alert-danger">
+							{{ form_errors(form.date) }}
+						</div>
+					{% endif %}
+					
+					{{ form_widget(form.date) }}
+				</div>
+				<br>
+				<div class="col-md-12">
+					<button class="btn btn-primary btn-lg" type="submit">
+						<i class="glyphicon glyphicon-search"></i>
+						 Recherche
+					</button>
+				</div>
+				{{ form_rest(form) }}
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

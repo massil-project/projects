@@ -1,0 +1,41 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block title %}
+	Antecedants : {{ patient.nom|capitalize~' '~patient.prenom|capitalize }}
+{% endblock %}
+
+{% block medical_body %}
+	<div clas="page-header">
+		<h1><i class="glyphicon glyphicon-user"></i> {{ patient.nom|capitalize~' '~patient.prenom|capitalize }} : <small>Antecedant</small></h1>
+	</div>
+	<div class="row">
+	<div class="col-md-7">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4>Ajouter un antecedant</h4>
+			</div>
+			<div class="panel-body">
+				{% include "MassilMedicalBundle:Antecedant:formulaire.html.twig" %}
+			</div>
+		</div>
+	</div>
+	</div>
+	{% block javascript %}
+		{{ parent() }}
+		<script type="text/javascript" src="{{ asset('tinymce/js/tinymce/tinymce.min.js') }}"></script>
+		<script type="text/javascript">
+			tinymce.init({ 
+				selector: "textarea",
+				language: "fr_FR",
+				resize: false,
+				height: 220,
+				plugins:"fullscreen textcolor print table preview template",
+				templates: [
+					{title:'massil korichi',description:'some description here',content:'My contetnt here'}],
+				tools: "inserttable",
+				toolbar: "undo redo | bold italic underline | forecolor backcolor fontsizeselect |fullscreen | print preview",
+				fontsize_formats: "12pt 14pt 18pt 24pt 36pt"
+			});
+		</script>
+	{% endblock %}
+{% endblock %}

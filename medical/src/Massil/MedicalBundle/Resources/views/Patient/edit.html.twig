@@ -1,0 +1,10 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block medical_body %}
+	<div class="page-header">
+		<h1><i class="glyphicon glyphicon-edit"></i>Modifier patient: {{ patient.nom|capitalize~' '~ patient.prenom|capitalize }}
+	</div>
+	
+	{% include "MassilMedicalBundle:Patient:formulaire.html.twig" %}
+	
+{% endblock %}

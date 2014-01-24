@@ -1,0 +1,12 @@
+{% extends "MassilMedicalBundle::layout.html.twig" %}
+
+{% block title %}
+	Ajouter patient
+{% endblock %}
+
+{% block medical_body %}
+<div class="page-header">
+	<h1><i class="glyphicon glyphicon-plus-sign"></i> Ajouter un patient</h1>
+</div> 
+	{% include "MassilMedicalBundle:Patient:formulaire.html.twig" %}
+{% endblock %}
