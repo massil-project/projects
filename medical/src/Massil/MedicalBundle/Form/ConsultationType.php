@@ -22,7 +22,6 @@ class ConsultationType extends AbstractType
             ->add('scapTriceps','text',array('required'=>false))
             ->add('diagnostic','textarea',array('required'=>false))
             ->add('ordonnance',new OrdonnanceType())
-            ->add('examen',new ExamenType())
         ;
     }
 

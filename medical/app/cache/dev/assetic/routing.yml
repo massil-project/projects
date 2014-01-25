@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: 'C:/Users/Massil/Documents/GitHub/projects/medical/app/config/routing_dev.yml'

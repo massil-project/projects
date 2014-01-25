@@ -1,9 +1,0 @@
-ecc766,127.0.0.1,GET,http://localhost/medical/web/app_dev.php/medical/patient/1/consultation/add,1390597611,
-2363a0,127.0.0.1,GET,http://localhost/medical/web/app_dev.php/login,1390597614,
-88b264,127.0.0.1,POST,http://localhost/medical/web/app_dev.php/login_check,1390597716,
-53fd79,127.0.0.1,GET,http://localhost/medical/web/app_dev.php/medical/patient/1/consultation/add,1390597723,
-c85b02,127.0.0.1,GET,http://localhost/medical/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DMassilMedicalBundle%253AMedical%253Asearch,1390597722,53fd79
-de12bb,127.0.0.1,GET,http://localhost/medical/web/app_dev.php/medical/patient/show/1,1390597734,
-7fc73a,127.0.0.1,GET,http://localhost/medical/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DMassilMedicalBundle%253AMedical%253Asearch,1390597733,de12bb
-1bff94,127.0.0.1,GET,http://localhost/medical/web/app_dev.php/medical/consultation/edit/1,1390597740,
-b14a71,127.0.0.1,GET,http://localhost/medical/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DMassilMedicalBundle%253AMedical%253Asearch,1390597740,1bff94
