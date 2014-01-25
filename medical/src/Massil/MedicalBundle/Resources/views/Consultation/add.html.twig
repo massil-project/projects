@@ -70,41 +70,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-7">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h4>Ant&egrave;cedants</h4>
-				</div>
-				<div class="panel-body">
-					<div class="col-md-12">
-						<ul class="list-group">
-							{% for antecedant in antecedants %}
-								<li class="list-group-item">
-									<h4 class="list-group-item-heading">{{ antecedant.type }}</h4>
-									<p class="list-group-item-text">{{ antecedant.contenu|raw }}</p>
-									<div class="btn-group col-md-12">
-										<a href="{{ path('medical_antecedant_edit',{'id':antecedant.id}) }}" class="btn btn-primary">
-											<i class="glyphicon glyphicon-edit"></i>
-											Modifier
-										</a>
-										<a href="{{ path('medical_antecedant_delete',{'id':antecedant.id}) }}" class="btn btn-danger">
-											<i class="glyphicon glyphicon-trash"></i>
-											Supprimer
-										</a>										
-									</div>
-								</li>
-							{% endfor %}
-						</ul>
-					</div>
-					<div class="center-block">
-						<a href="{{ path('medical_antecedant_add',{'id':patient.id}) }}" class="btn btn-success">
-							<i class="glyphicon glyphicon-plus-sign"></i>
-							Ajouter un antecedant
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 	<div class="row">
 		<div class="col-md-6">

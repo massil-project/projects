@@ -188,24 +188,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'medical_consultation_delete')), array (  '_controller' => 'Massil\\MedicalBundle\\Controller\\ConsultationController::deleteAction',));
                 }
 
-                // medical_antecedant_add
-                if (preg_match('#^/medical/consultation/(?P<id>\\d*)/antecedant/add$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'medical_antecedant_add')), array (  '_controller' => 'Massil\\MedicalBundle\\Controller\\AntecedantController::addAction',));
-                }
-
-            }
-
-            if (0 === strpos($pathinfo, '/medical/antecedant')) {
-                // medical_antecedant_edit
-                if (0 === strpos($pathinfo, '/medical/antecedant/edit') && preg_match('#^/medical/antecedant/edit/(?P<id>\\d*)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'medical_antecedant_edit')), array (  '_controller' => 'Massil\\MedicalBundle\\Controller\\AntecedantController::editAction',));
-                }
-
-                // medical_antecedant_delete
-                if (0 === strpos($pathinfo, '/medical/antecedant/delete') && preg_match('#^/medical/antecedant/delete/(?P<id>\\d*)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'medical_antecedant_delete')), array (  '_controller' => 'Massil\\MedicalBundle\\Controller\\AntecedantController::deleteAction',));
-                }
-
             }
 
             if (0 === strpos($pathinfo, '/medical/recherche')) {

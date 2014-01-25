@@ -58,23 +58,23 @@ medical_consultation_delete:
     requirements:
         id: \d*
         
-medical_antecedant_add:
-    path: /consultation/{id}/antecedant/add
-    defaults: { _controller:MassilMedicalBundle:Antecedant:add }
-    requirements:
-        id: \d*
+#medical_antecedant_add:
+#   path: /consultation/{id}/antecedant/add
+#    defaults: { _controller:MassilMedicalBundle:Antecedant:add }
+#    requirements:
+#        id: \d*
         
-medical_antecedant_edit:
-    path: /antecedant/edit/{id}
-    defaults: { _controller:MassilMedicalBundle:Antecedant:edit }
-    requirements:
-        id: \d*
+#medical_antecedant_edit:
+#    path: /antecedant/edit/{id}
+#    defaults: { _controller:MassilMedicalBundle:Antecedant:edit }
+#    requirements:
+#        id: \d*
         
-medical_antecedant_delete:
-    path: /antecedant/delete/{id}
-    defaults: { _controller:MassilMedicalBundle:Antecedant:delete }
-    requirements:
-        id: \d*
+#medical_antecedant_delete:
+#    path: /antecedant/delete/{id}
+#    defaults: { _controller:MassilMedicalBundle:Antecedant:delete }
+#    requirements:
+#        id: \d*
         
 medical_recherche:
     path: /recherche

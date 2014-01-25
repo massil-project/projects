@@ -13,8 +13,14 @@ class ConsultationController extends Controller
 	public function addAction(Patient $patient,$message)
 	{
 		$em=$this->get('doctrine.orm.entity_manager');
+		
+		/**
+		 * antecedants have been deleted
+		 * 
 		$antecedants=$em->getRepository('MassilMedicalBundle:Antecedant')
 						->getPatientAntecedants($patient->getId());
+		*
+		**/
 		
 		$consulation=new Consultation();
 		
@@ -43,7 +49,6 @@ class ConsultationController extends Controller
 		return $this->render('MassilMedicalBundle:Consultation:add.html.twig',array('form'=>$form->createView()
 																					,'patient'=>$patient
 																					,'consultation'=>$consulation
-																					,'antecedants'=>$antecedants
 																					,'message'=>$message));
 		
 	}
@@ -52,9 +57,16 @@ class ConsultationController extends Controller
 	{
 		$patient=$consultation->getPatient();
 		
+		/**
+		 * 
+		 * antecedants have been deleted
+		 * 
+		 * 
 		$em=$this->get('doctrine.orm.entity_manager');
 		$antecedants=$em->getRepository('MassilMedicalBundle:Antecedant')
 						->getPatientAntecedants($patient->getId());
+						
+		**/
 						
 		$form=$this->createForm(new ConsultationEditType(), $consultation);
 		
@@ -82,8 +94,7 @@ class ConsultationController extends Controller
 		
 		return $this->render('MassilMedicalBundle:Consultation:edit.html.twig',array('consultation'=>$consultation,
 																						'form'=>$form->createView()
-																						,'patient'=>$patient
-																						,'antecedants'=>$antecedants));	
+																						,'patient'=>$patient));	
 	}
 	
 	
