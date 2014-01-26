@@ -86,7 +86,7 @@ class PatientRepository extends EntityRepository
 		return new Paginator($query);
 	}
 	
-	public function getSearch($recherche, $age=NULL, $date=NULL, $sexe=NULL, $assurance=NULL, $etatCivil=NULL)
+	public function getSearch($page, $recherche, $age=NULL, $date=NULL, $sexe=NULL, $assurance=NULL, $etatCivil=NULL)
 	{
 		$query=$this->createQueryBuilder('p');
 		
@@ -210,9 +210,12 @@ class PatientRepository extends EntityRepository
 					->setParameter(':etat_civil', $etatCivil)
 					;
 		}
+
+		
+		$query->setFirstResult(($page-1)*20);
+		$query->setMaxResults(20);
 					
-		return $query->getQuery()
-						->getResult();
+		return new Paginator($query);
 	}
 	
 	public function getPatientsInSalleAttente($page,$date = NULL)

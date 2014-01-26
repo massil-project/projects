@@ -77,12 +77,16 @@ medical_consultation_delete:
 #        id: \d*
         
 medical_recherche:
-    path: /recherche
-    defaults: { _controller:MassilMedicalBundle:Medical:recherche }
+    path: /recherche/{page}
+    defaults: { _controller:MassilMedicalBundle:Medical:recherche, page:1 }
+    requirements:
+        page: \d*
     
 medical_recherche_avance:
-    path: /recherche/avance
-    defaults: { _controller:MassilMedicalBundle:Medical:rechercheAvance }
+    path: /recherche/avance/{page}
+    defaults: { _controller:MassilMedicalBundle:Medical:rechercheAvance, page:1 }
+    requirements:
+        page: \d*
     
 medical_consultation_jour:
     path: /consultation/jour
@@ -114,3 +118,6 @@ medical_salle_search:
     path: /salle/search
     defaults: { _controller:MassilMedicalBundle:Salle:search }
     
+medical_settings_analyse:
+    path: /settings/analyse
+    defaults: { _controller:MassilMedicalBundle:Settings:analyse }

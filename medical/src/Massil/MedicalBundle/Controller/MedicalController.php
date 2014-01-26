@@ -38,7 +38,7 @@ class MedicalController extends Controller
 		return $this->render('MassilMedicalBundle:Medical:search-form.html.twig',array('form'=>$form->createView()));
 	}
 	
-	public function rechercheAction()
+	public function rechercheAction($page)
 	{
 		$recherche=new Recherche();
 		
@@ -60,12 +60,16 @@ class MedicalController extends Controller
 				$this->get('session')->getFlashBag()->add('info','recherche effectue');
 				
 				$results=$em->getRepository('MassilMedicalBundle:Patient')
-							->getSearch($recherche->getSearch());
+							->getSearch($page,$recherche->getSearch());
+							
+				$numberPages = ceil(count($results)/20);
 							
 				return $this->render('MassilMedicalBundle:Patient:index.html.twig',array('patients'=>$results
 																						,'filter'=>'dateAjout'
 																						,'direction'=>'down'
 																						,'message'=>'recherche'
+																						,'numberPages'=>$numberPages
+																						,'page'=>$page
 																						));
 			}
 		}
@@ -73,7 +77,7 @@ class MedicalController extends Controller
 		return $this->redirect($this->generateUrl('medical_patient_home'));
 	}
 	
-	public function rechercheAvanceAction()
+	public function rechercheAvanceAction($page)
 	{
 		$rechercheAvance= new RechercheAvance();
 		
@@ -96,17 +100,22 @@ class MedicalController extends Controller
 				$this->get('session')->getFlashBag()->add('info','recherche effectue');
 					
 				$results=$em->getRepository('MassilMedicalBundle:Patient')
-							->getSearch($rechercheAvance->getSearch()
+							->getSearch($page
+										,$rechercheAvance->getSearch()
 										,$rechercheAvance->getAge()
 										,$rechercheAvance->getDate()
 										,$rechercheAvance->getSexe()
 										,$rechercheAvance->getAssurance()
 										,$rechercheAvance->getEtatCivil());
+										
+				$numberPages = ceil(count($results)/20);
 							
 				return $this->render('MassilMedicalBundle:Patient:index.html.twig',array('patients'=>$results
 																						,'filter'=>'dateAjout'
 																						,'direction'=>'down'
 																						,'message'=>'recherche'
+																						,'page'=>$page
+																						,'numberPages'=>$numberPages
 																						));
 			}
 		}

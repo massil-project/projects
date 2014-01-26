@@ -66,6 +66,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            
              {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} 
             	<li class="dropdown">
             		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -89,6 +90,24 @@
             		</ul>
             	</li>
             {% endif %}
+            
+            {% if is_granted('ROLE_MEDECIN') %}
+            	<li class="dropdown">
+            		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            			<i class="glyphicon glyphicon-wrench"></i>
+            				Parametres
+            		</a>
+            		<ul class="dropdown-menu">
+            			<li>
+            				<a href="{{ path('medical_settings_analyse') }}">
+            					<i class="glyphicon glyphicon-cog"></i>
+            					 Analyse
+            				</a>
+            			</li>
+            		</ul>
+            	</li>
+            {% endif %}
+            
             {% block recherche %}{% endblock %}
           </ul>
         </div><!--/.nav-collapse -->

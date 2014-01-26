@@ -255,29 +255,32 @@
 	{% endif %}
 {% endif %}
 
-{% if patients|length > 0 %}
-
-<div class="row">
-<div class="col-md-4"></div>
-<div>
-	<ul class="pagination">
-		<li {% if page==1 %}class="disabled"{% endif %}>
-			<a href="{{ path('medical_patient_home',{'page':(page-1)}) }}">
-				<i class="glyphicon glyphicon-chevron-left"></i>
-			</a>
-		</li>
-		{% for p in range(1,numberPages) %}
-			<li {% if p==page %}class="active"{% endif %}>
-				<a href="{{ path('medical_patient_home',{'page':p}) }}">{{ p }}</a>
-			</li>
-		{% endfor %}
-			<li {% if page==numberPages %}class="disabled"{% endif %}>
-				<a href="{{ path('medical_patient_home',{'page':(page+1)}) }}">
-					<i class="glyphicon glyphicon-chevron-right"></i>
+{% if page is defined %}
+	{% if patients|length > 0 %}
+	
+	<div class="row">
+	<div class="col-md-4"></div>
+	<div>
+		<ul class="pagination">
+			<li {% if page==1 %}class="disabled"{% endif %}>
+				<a href="{{ path('medical_patient_home',{'page':(page-1)}) }}">
+					<i class="glyphicon glyphicon-chevron-left"></i>
 				</a>
 			</li>
-	</ul>
-</div>
-</div>
+			{% for p in range(1,numberPages) %}
+				<li {% if p==page %}class="active"{% endif %}>
+					<a href="{{ path('medical_patient_home',{'page':p}) }}">{{ p }}</a>
+				</li>
+			{% endfor %}
+				<li {% if page==numberPages %}class="disabled"{% endif %}>
+					<a href="{{ path('medical_patient_home',{'page':(page+1)}) }}">
+						<i class="glyphicon glyphicon-chevron-right"></i>
+					</a>
+				</li>
+		</ul>
+	</div>
+	</div>
+	{% endif %}
 {% endif %}
+
 {% endblock %}
