@@ -117,7 +117,3 @@ medical_salle_change:
 medical_salle_search:
     path: /salle/search
     defaults: { _controller:MassilMedicalBundle:Salle:search }
-    
-medical_settings_analyse:
-    path: /settings/analyse
-    defaults: { _controller:MassilMedicalBundle:Settings:analyse }
