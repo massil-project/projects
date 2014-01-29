@@ -1,0 +1,3 @@
+massil_configuration_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: MassilConfigurationBundle:Default:index }

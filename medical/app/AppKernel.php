@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Massil\UserBundle\MassilUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new CoreSphere\ConsoleBundle\CoreSphereConsoleBundle(),
+            new Massil\ConfigurationBundle\MassilConfigurationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

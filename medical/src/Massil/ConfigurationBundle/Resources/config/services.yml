@@ -1,0 +1,7 @@
+parameters:
+#    massil_configuration.example.class: Massil\ConfigurationBundle\Example
+
+services:
+#    massil_configuration.example:
+#        class: %massil_configuration.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
