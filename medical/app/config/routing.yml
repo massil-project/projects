@@ -1,6 +1,6 @@
-massil_configuration:
-    resource: "@MassilConfigurationBundle/Resources/config/routing.yml"
-    prefix:   /
+massil_config:
+    resource: "@MassilConfigBundle/Resources/config/routing.yml"
+    prefix:   /medical/config
 
 massil_medical:
     resource: "@MassilMedicalBundle/Resources/config/routing.yml"

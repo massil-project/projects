@@ -1,0 +1,7 @@
+{% extends "::layout.html.twig" %}
+{% block recherche %}
+	{{ render(controller("MassilMedicalBundle:Medical:search")) }}
+{% endblock %}
+{% block body %}
+	{% block medical_body %}{% endblock %}
+{% endblock %}

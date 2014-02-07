@@ -1,0 +1,21 @@
+{% extends "MassilConfigBundle::layout.html.twig" %}
+
+{% block title %}
+	config
+{% endblock %}
+
+{% block medical_body %}
+
+	{% for param in params %}
+		{{ param.nom }} : <br>
+	{% endfor %}
+	
+	<form method="post" {{ form_enctype(form) }}>
+	{{ form_row(form) }}
+	
+	<input type="submit" value="submit">
+	</form>
+	
+	
+		
+{% endblock %}

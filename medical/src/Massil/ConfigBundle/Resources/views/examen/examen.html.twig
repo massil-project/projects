@@ -1,0 +1,41 @@
+{% extends "MassilConfigBundle::layout.html.twig" %}
+
+{% block title %}
+	examen
+{% endblock %}
+
+{% block medical_body %}
+	<form method="post" {{ form_enctype(form) }}>
+		
+		<div>
+			<a class="btn btn-success" id="btn-show">ajouter bilan general</a>
+		</div>
+		<div id="bilan-general">
+		{{ form_row(form.bilanGeneral) }}
+		</div>
+		
+		{{ form_rest(form) }}
+		<input type="submit" value="submit">
+	</form>
+	<div>
+		{% if type is defined %} {{ type }} {% endif %}
+	</div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+<script>
+	if($("#massil_configbundle_examenedittype_generaleActivation").attr("value") === "false"){
+		$("#bilan-general").hide();
+	};
+	$("#btn-show").click(function(){
+		$("#bilan-general").toggle("blind");
+		if($("#massil_configbundle_examenedittype_generaleActivation").attr("value") === "false"){
+			$("#massil_configbundle_examenedittype_generaleActivation").attr("value","true");
+		}
+		else{
+			$("#massil_configbundle_examenedittype_generaleActivation").attr("value","false");
+		}
+	});
+</script>
+{% endblock %}

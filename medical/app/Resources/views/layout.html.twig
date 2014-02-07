@@ -87,6 +87,13 @@
             					Deconnexion
             				</a>
             			</li>
+            			<li class="divider"></li>
+            			<li>
+            				<a href="{{ path('medical_config_init') }}">
+            					<i class="glyphicon glyphicon-cog"></i>
+            					R&eacute;nitialiser les Param&eacute;tres
+            				</a>
+            			</li>
             		</ul>
             	</li>
             {% endif %}
@@ -108,8 +115,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     {% block javascript %}
 	    <script src="{{ asset('js/jquery-1.10.2.min.js') }}"></script>
+	    <script src="{{ asset('js/jquery-ui.js') }}"></script>
 	    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-	    <script src="{{ asset('js/bootstrap-formhelpers.js') }}"></script>
+	    <script src="{{ asset('js/bootstrap-formhelpers.js') }}"></script>	    
   	{% endblock %}
 
 	</body>
