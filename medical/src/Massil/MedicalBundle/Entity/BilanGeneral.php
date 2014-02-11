@@ -25,6 +25,11 @@ class BilanGeneral
      * @ORM\OneToOne(targetEntity="Massil\MedicalBundle\Entity\Hemostase",cascade={"persist","remove"})
      */
     private $hemostase;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Massil\MedicalBundle\Entity\FNS", cascade={"persist","remove"})
+     */
+    private $fns;
 
     /**
      * Get id
@@ -57,5 +62,28 @@ class BilanGeneral
     public function getHemostase()
     {
         return $this->hemostase;
+    }
+
+    /**
+     * Set fns
+     *
+     * @param \Massil\MedicalBundle\Entity\FNS $fns
+     * @return BilanGeneral
+     */
+    public function setFns(\Massil\MedicalBundle\Entity\FNS $fns = null)
+    {
+        $this->fns = $fns;
+
+        return $this;
+    }
+
+    /**
+     * Get fns
+     *
+     * @return \Massil\MedicalBundle\Entity\FNS 
+     */
+    public function getFns()
+    {
+        return $this->fns;
     }
 }

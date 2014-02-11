@@ -126,11 +126,11 @@ class ConsultationController extends Controller
 				$bilanGeneralActivation=$data->getExamen()->getBilanGeneralActive();
 				if ($bilanGeneralActivation == "false")
 				{
-					$consulation->getExamen()->setBilanGeneralActive(false);
+					$consultation->getExamen()->setBilanGeneralActive(false);
 				}
 				else 
 				{
-					$consulation->getExamen()->setBilanGeneralActive(true);					
+					$consultation->getExamen()->setBilanGeneralActive(true);					
 				}
 				
 				$em->persist($consultation);

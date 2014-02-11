@@ -17,6 +17,7 @@ class BilanGeneralType extends AbstractType
     {
         $builder
             ->add('hemostase',new HemostaseType($this->bilanGeneralParams))
+            ->add('fns',new FNSType($this->bilanGeneralParams))
         ;
     }
 
