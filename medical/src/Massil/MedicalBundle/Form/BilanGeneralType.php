@@ -8,10 +8,15 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class BilanGeneralType extends AbstractType
 {
+	private $bilanGeneralParams;
+	public function __construct($bilanGeneralParams)
+	{
+		$this->bilanGeneralParams=$bilanGeneralParams;
+	}
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hemostase',new HemostaseType())
+            ->add('hemostase',new HemostaseType($this->bilanGeneralParams))
         ;
     }
 

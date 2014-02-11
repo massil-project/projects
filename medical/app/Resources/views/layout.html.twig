@@ -66,8 +66,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            
-             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} 
+             
             	<li class="dropdown">
             		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
             			<i class="glyphicon glyphicon-user"></i>
@@ -96,7 +95,30 @@
             			</li>
             		</ul>
             	</li>
-            {% endif %}
+
+            	<li class="dropdown">
+            		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            			<i class="glyphicon glyphicon-cog"></i>
+            				Prametres
+            		</a>
+            		<ul class="dropdown-menu">
+            			<li>
+            				<a href="{{ path('medical_config_init') }}">
+            					<i class="glyphicon glyphicon-refresh"></i>
+            					 R&eacute;nitialiser
+            				</a>
+            			</li>
+            			<li class="divider"></li>
+            			<li>
+            				<a href="{{ path('medical_config_bilan',{'bilan':'general'}) }}">
+            					<i class="glyphicon glyphicon-cog"></i>
+            					Bilan G&eacute;n&eacute;ral
+            				</a>
+            			</li>
+            		</ul>
+            	</li>
+            	
+            	
             
             {% block recherche %}{% endblock %}
           </ul>

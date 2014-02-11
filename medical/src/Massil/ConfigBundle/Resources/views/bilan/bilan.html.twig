@@ -1,21 +1,33 @@
 {% extends "MassilConfigBundle::layout.html.twig" %}
 
 {% block title %}
-	config
+	Config : {{ bilan|raw }}
 {% endblock %}
 
 {% block medical_body %}
-
-	{% for param in params %}
-		{{ param.nom }} : <br>
-	{% endfor %}
 	
+	{# page header #}
+	<div class="page-header">
+		<h1><i class="glyphicon glyphicon-cog"></i>  Param&egrave;tres : <small> {{ bilan|raw }}</small></h1>
+	</div>
+	
+	{# start of the form #}
 	<form method="post" {{ form_enctype(form) }}>
-	{{ form_row(form) }}
-	
-	<input type="submit" value="submit">
-	</form>
-	
-	
 		
+		{# token field and submit button #}
+		<div class="row">
+			{{ form_row(form._token) }}
+			
+			<button type="submit" class="btn btn-success">
+				<i class="glyphicon glyphicon-floppy-disk"></i>
+				 Enregistrer
+			</button>
+		</div>
+		<br>
+		
+		{# include hemostase parameters #}
+		<div class="row">
+			{% include "MassilConfigBundle:Bilan:hemostase.html.twig" %}
+		</div>
+	</form>
 {% endblock %}

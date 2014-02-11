@@ -22,11 +22,12 @@ class ParametereRepository extends EntityRepository
 					->where('bil.code=:code_bilan')
 					->setParameter('code_bilan', $codeBilan)
 					->getQuery()
-					->getResult();
+					->getResult()
+					;
 					
 		return $query;
 	}
-	public function getBilanParam($codeBilan,$codeParam,$output = 'object')
+	public function getBilanParam($codeBilan,$codeParam)
 	{
 		$query=$this->createQueryBuilder('par')
 					->leftJoin('par.bilanParameters', 'bp')
@@ -36,23 +37,29 @@ class ParametereRepository extends EntityRepository
 					->where('bil.code=:code_bilan AND par.code=:code_param')
 					->setParameter('code_bilan', $codeBilan)
 					->setParameter('code_param', $codeParam)
-					->getQuery();
-		
-		if ($output == 'array')
-		{
-			$query->getArrayResult();
-		}
-		else
-		{
-			$query->getResult();
-		}
+					->getQuery()
+					->getResult();
 					
 		return $query;
 	}
 	
-	public function getParamsInArray()
+	public function getParamsInArray($codeBilan)
 	{
-		$query=$this->createQueryBuilder('p')
+		$query=$this->createQueryBuilder('par')
+					->leftJoin('par.bilanParameters', 'bp')
+					->addSelect('bp')
+					->leftJoin('bp.bilan', 'bil')
+					->addSelect('bil')
+					->where('bil.code=:code_bilan AND bp.activation=1')
+					->setParameter('code_bilan', $codeBilan)
+					->getQuery()
+					->getArrayResult();
+					
+		return $query;
+	}
+	public function getParamsInformations()
+	{
+		$query=$this->createQueryBuilder('par')
 					->getQuery()
 					->getArrayResult();
 					

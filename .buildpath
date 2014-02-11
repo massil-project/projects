@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="medical/app"/>
+	<buildpathentry kind="src" path="medical/src/Massil/MedicalBundle"/>
+	<buildpathentry kind="src" path="medical/src/Massil/UserBundle"/>
+	<buildpathentry kind="src" path="medical/vendor"/>
+	<buildpathentry kind="src" path="medical/web"/>
+	<buildpathentry kind="src" path="medical/src/Massil/ConfigBundle"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>

@@ -1,7 +1,10 @@
 {% extends "MassilConfigBundle::layout.html.twig" %}
 
 {% block medical_body %}
-	{% for key in params[0]|keys %}
-		{{ key }}
+	
+	{% for key, unite in unites %}
+		 {{ key }} : {{ unite }}<br>
 	{% endfor %}
+	
+	{{ unites[5] }}
 {% endblock %}

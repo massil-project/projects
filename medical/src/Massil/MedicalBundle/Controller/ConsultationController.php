@@ -22,9 +22,23 @@ class ConsultationController extends Controller
 		*
 		**/
 		
+		$bilanGeneralParams=array();
+		$paramsB01 = $em->getRepository('MassilConfigBundle:Parametere')
+					->getParamsInArray('B01');
+					
+		$unitesB01=array();
+		foreach ($paramsB01 as $unite)
+		{
+			array_push($unitesB01, $unite['unite']);
+		}
+		foreach ($paramsB01 as $param)
+		{
+			array_push($bilanGeneralParams, $param['code']);
+		}
+					
 		$consulation=new Consultation();
 		
-		$form=$this->createForm(new ConsultationType(), $consulation);
+		$form=$this->createForm(new ConsultationType($bilanGeneralParams), $consulation);
 		
 		$request=$this->getRequest();
 		
@@ -34,6 +48,16 @@ class ConsultationController extends Controller
 			
 			if ($form->isValid())
 			{
+				$data=$form->getData();
+				$bilanGeneralActivation=$data->getExamen()->getBilanGeneralActive();
+				if ($bilanGeneralActivation == "false")
+				{
+					$consulation->getExamen()->setBilanGeneralActive(false);
+				}
+				else 
+				{
+					$consulation->getExamen()->setBilanGeneralActive(true);					
+				}
 				$patient->addConsultation($consulation);
 				$em->persist($patient);
 				$em->persist($consulation);
@@ -49,13 +73,33 @@ class ConsultationController extends Controller
 		return $this->render('MassilMedicalBundle:Consultation:add.html.twig',array('form'=>$form->createView()
 																					,'patient'=>$patient
 																					,'consultation'=>$consulation
-																					,'message'=>$message));
+																					,'message'=>$message
+																					,'B01Unites'=>$unitesB01));
 		
 	}
 	
 	public function editAction(Consultation $consultation)
 	{
+		$em=$this->get('doctrine.orm.entity_manager');
 		$patient=$consultation->getPatient();
+		
+		//get parameters of bilan general
+		$bilanGeneralParams=array();
+		$paramsB01 = $em->getRepository('MassilConfigBundle:Parametere')
+					->getParamsInArray('B01');
+		
+		//save unities of measurments in an array
+		$unitesB01=array();
+		foreach ($paramsB01 as $unite)
+		{
+			array_push($unitesB01, $unite['unite']);
+		}
+		
+		//save bilan general parameters codes in array to constuct the forms
+		foreach ($paramsB01 as $param)
+		{
+			array_push($bilanGeneralParams, $param['code']);
+		}
 		
 		/**
 		 * 
@@ -68,7 +112,7 @@ class ConsultationController extends Controller
 						
 		**/
 						
-		$form=$this->createForm(new ConsultationEditType(), $consultation);
+		$form=$this->createForm(new ConsultationEditType($bilanGeneralParams), $consultation);
 		
 		$request=$this->getRequest();
 		
@@ -78,7 +122,16 @@ class ConsultationController extends Controller
 			
 			if ($form->isValid())
 			{
-				$em=$this->get('doctrine.orm.entity_manager');
+				$data=$form->getData();
+				$bilanGeneralActivation=$data->getExamen()->getBilanGeneralActive();
+				if ($bilanGeneralActivation == "false")
+				{
+					$consulation->getExamen()->setBilanGeneralActive(false);
+				}
+				else 
+				{
+					$consulation->getExamen()->setBilanGeneralActive(true);					
+				}
 				
 				$em->persist($consultation);
 				
@@ -94,7 +147,8 @@ class ConsultationController extends Controller
 		
 		return $this->render('MassilMedicalBundle:Consultation:edit.html.twig',array('consultation'=>$consultation,
 																						'form'=>$form->createView()
-																						,'patient'=>$patient));	
+																						,'patient'=>$patient
+																						,'B01Unites'=>$unitesB01));	
 	}
 	
 	

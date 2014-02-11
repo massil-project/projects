@@ -60,6 +60,20 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Examens</h4>
+				</div>
+				<div class="panel-body">
+					{% include "MassilMedicalBundle:Examen:examen.html.twig" %}
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div class="row">
 		<div class="col-md-6">
 			<div class="panel panel-primary">
@@ -71,29 +85,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h4>Examens</h4>
-				</div>
-				<div class="panel-body">
-					<div class="row col-md-12">
-						{% include "MassilMedicalBundle:Consultation:clinique.html.twig" %}
-					</div>	
-					<br>
-					<div class="row col-md-12">
-						{% include "MassilMedicalBundle:Consultation:paraclinique.html.twig" %}
-					</div>	
-				</div>
-			</div>
-		</div>
 			<!--$("#massil_medicalbundle_consultationtype_diagnostic").val()-->
 	</div>
-	{{ form_rest(form) }}
+	{{ form_row(form._token) }}
 	</form>
 	{% block javascript %}
 		{{ parent() }}
 		<script type="text/javascript" src="{{ asset('tinymce/js/tinymce/tinymce.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/edit-tinymce-config.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/edit-bilan-general.js') }}"></script>
 	{% endblock %}
 {% endblock %}

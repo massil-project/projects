@@ -40,6 +40,13 @@ class Parametere
      * @ORM\Column(name="code", type="string", length=255, unique=true)
      */
     private $code;
+    
+    /**
+     * @var
+     * 
+     * @ORM\Column(name="unite", type="string", length=255)
+     */
+    private $unite;
 
 
     /**
@@ -77,10 +84,11 @@ class Parametere
     /**
      * Constructor
      */
-    public function __construct($code,$nom)
+    public function __construct($code,$nom,$unite)
     {
     	$this->setCode($code);
     	$this->setNom($nom);
+    	$this->setUnite($unite);
         $this->bilanParameters = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -139,5 +147,28 @@ class Parametere
     public function getCode()
     {
         return $this->code;
+    }
+
+    /**
+     * Set unite
+     *
+     * @param string $unite
+     * @return Parametere
+     */
+    public function setUnite($unite)
+    {
+        $this->unite = $unite;
+
+        return $this;
+    }
+
+    /**
+     * Get unite
+     *
+     * @return string 
+     */
+    public function getUnite()
+    {
+        return $this->unite;
     }
 }

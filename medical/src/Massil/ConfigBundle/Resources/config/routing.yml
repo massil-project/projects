@@ -1,22 +1,11 @@
 medical_config_bilan:
-    path: /bilan
-    defaults: { _controller:MassilConfigBundle:Bilan:setParameters }
-
-medical_config_examen:
-    path: /examen
-    defaults: { _controller:MassilConfigBundle:Examen:add }	
-medical_config_edit:
-    path: /edit
-    defaults: { _controller:MassilConfigBundle:Examen:edit }
-
-medical_config_delete:
-    path: /delete
-    defaults: { _controller:MassilConfigBundle:Examen:delete }
-
-medical_config_test:
-    path: /test
-    defaults: { _controller:MassilConfigBundle:Bilan:param }
+    path: /bilan/{bilan}
+    defaults: { _controller:MassilConfigBundle:Param:setBilan }
 
 medical_config_init:
     pattern: /init
     defaults: { _controller: MassilConfigBundle:Param:init }
+
+medical_config_test:
+    pattern: /test
+    defaults: { _controller: MassilConfigBundle:Param:test }

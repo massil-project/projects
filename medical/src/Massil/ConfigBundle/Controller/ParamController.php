@@ -53,44 +53,56 @@ class ParamController extends Controller
     	//array of parameters
     	$parameters = array(// temps de saignement (minutes) Technique de Duke
     						array('code'=>'P01'
-    								,'nom'=>'Temps de saignement Duke')
+    								,'nom'=>'Temps de saignement Duke'
+    								,'unite'=>'min')
     								
     						// temps de saignement (minutes) Technique d'Ivy
     						,array('code'=>'P02'
-    								,'nom'=>'Temps de saignement Ivy')
+    								,'nom'=>'Temps de saignement Ivy'
+    								,'unite'=>'min')
     								
     						//	Temps de Prothrombine/ INR (%)
     						,array('code'=>'P03'
-    								,'nom'=>'Temps de Prothrombine INR')
+    								,'nom'=>'Temps de Prothrombine INR'
+    								,'unite'=>'%')
     								
     						//Temps de Céphaline activé (TCA) (secondes)
     						,array('code'=>'P04'
-    								,'nom'=>'Temps de C&eacute;phaline activ&eacute; TCA')
+    								,'nom'=>'Temps de C&eacute;phaline activ&eacute; TCA'
+    								,'unite'=>'sec')
     						
     						//-	Fibrinogéne (g/l)
     						,array('code'=>'P05'
-    								,'nom'=>'Fibrinog&eacute;ne')
+    								,'nom'=>'Fibrinog&eacute;ne'
+    								,'unite'=>'g/l')
     								
     						//-	Facteurs antihémophiliques A et B (%)
     						,array('code'=>'P06'
-    								,'nom'=>'Facteurs antih&eacute;mophiliques : Facteur VIII')
+    								,'nom'=>'Facteurs antih&eacute;mophiliques : Facteur VIII'
+    								,'unite'=>'%')
     								
     						,array('code'=>'P07'
-    								,'nom'=>'Facteurs antih&eacute;mophiliques : Facteur IX')
+    								,'nom'=>'Facteurs antih&eacute;mophiliques : Facteur IX'
+    								,'unite'=>'%')
     								
     						//-	Héparinémie (UI/ml)
     						,array('code'=>'P08'
-    								,'nom'=>'H&eacute;parin&eacute;mie')
+    								,'nom'=>'H&eacute;parin&eacute;mie'
+    								,'unite'=>'UI/ml')
     								
-    						//-	Anti-thrombine III 
+    						//-	Anti-thrombine III (g/l)
     						,array('code'=>'P09'
-    								,'nom'=>'Anti-thrombine III : Dosage')
+    								,'nom'=>'Anti-thrombine III : Dosage'
+    								,'unite'=>'g/l')
+    						//-	Anti-thrombine III (%)
     						,array('code'=>'P10'
-    								,'nom'=>'Anti-thrombine III : Activit&eacute;')
+    								,'nom'=>'Anti-thrombine III : Activit&eacute;'
+    								,'unite'=>'%')
     								
     						//-	Protéine C / protéine S mg/l
     						,array('code'=>'P11'
-    								,'nom'=>'Prot&eacute;ine C/prot&eacute;ine S')
+    								,'nom'=>'Prot&eacute;ine C/prot&eacute;ine S'
+    								,'unite'=>'mg/l')
     						);				
     						
     	
@@ -108,8 +120,9 @@ class ParamController extends Controller
     		{
     			$codePrameter = $parameter['code'];
     			$nomParameter = $parameter['nom'];
+    			$uniteParameter = $parameter['unite'];
     			
-    			$parameterEntity = new Parametere($codePrameter, $nomParameter);
+    			$parameterEntity = new Parametere($codePrameter, $nomParameter, $uniteParameter);
     			
     			$em->persist($parameterEntity);
     		}
@@ -141,8 +154,57 @@ class ParamController extends Controller
     	return $this->redirect($this->generateUrl('medical_patient_home'));
     }
 	
-    public function setBilanParametersAction($bilan)
+    public function setBilanAction($bilan)
     {
+    	if ($bilan == 'general')
+    	{
+    		$bilanCode='B01';
+    		$bilanName='Bilan G&eacute;n&eacute;ral';
+    	}
     	
+    	$em = $this->get('doctrine.orm.entity_manager');
+		$params=$em->getRepository('MassilConfigBundle:Parametere')
+					->getBilanParams($bilanCode);
+					
+		$form=$this->createForm(new ParamType($params));
+		
+		$request=$this->getRequest();
+		if ($request->getMethod()=='POST')
+		{
+			$form->bind($request);
+			
+			$data = $form->getData();
+			
+			foreach ($params as $param)
+			{	
+				$bilanParams = $param->getBilanParameters();
+				$activationStatus=$bilanParams[0]->setActivation($data[$param->getCode()]);
+				
+				$em->persist($activationStatus);
+				$em->flush();
+			}
+			
+			return $this->redirect($this->generateUrl('medical_patient_home'));
+		}
+		
+		return $this->render('MassilConfigBundle:Bilan:bilan.html.twig',array('form'=>$form->createView()
+																				,'bilan'=>$bilanName));
+    	
+    }
+    
+    public function testAction()
+    {
+    	$em=$this->get('doctrine.orm.entity_manager');
+
+    	$paramsInfo=$em->getRepository('MassilConfigBundle:Parametere')
+    					->getParamsInArray('B01');
+    					
+    	$unites = array();
+    	foreach ($paramsInfo as $unite)
+    	{
+    		array_push($unites, $unite['unite']);
+    	}
+    					
+    	return $this->render('MassilConfigBundle:Test:test.html.twig',array('unites'=>$unites));
     }
 }

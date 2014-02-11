@@ -9,42 +9,6 @@
 		<i><strong>le : </strong>{{ consultation.date|date('d/m/Y') }} <strong> &agrave; : </strong> {{ consultation.date|date('H') }}<strong>h</strong>{{ consultation.date|date('i') }}</i>
 	</div>
 	
-	{% if message == 'antecedant_delete' %}
-		<div class="row">
-			<div class="alert alert-info alert-dismissable">
-				<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<h5>
-					<i class="glyphicon glyphicon-ok"></i>
-					<strong>Info : </strong> Antecedant supprim&eacute; avec succ&egrave;s
-				</h5>
-			</div>
-		</div>
-
-
-	{% elseif message == 'antecedant_saved' %}
-		<div class="row">
-			<div class="alert alert-info alert-dismissable">
-				<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<h5>
-					<i class="glyphicon glyphicon-ok"></i>
-					<strong>Info : </strong> Antecedant enregitr&eacute; avec succ&egrave;s
-				</h5>
-			</div>
-		</div>
-
-	{% elseif message == 'antecedant_edit' %}
-		<div class="row">
-			<div class="alert alert-info alert-dismissable">
-				<button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<h5>
-					<i class="glyphicon glyphicon-ok"></i>
-					<strong>Info : </strong> Antecedant modifi&eacute; avec succ&egrave;s
-				</h5>
-			</div>
-		</div>
-
-	{% endif %}
-	
 	<form method="post" {{ form_enctype(form) }}>
 	<div class="row">
 	<div class="btn-group col-md-6">
@@ -60,7 +24,7 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-md-5">
+		<div class="col-md-12">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h4>Constantes vitales</h4>
@@ -94,6 +58,20 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Examens</h4>
+				</div>
+				<div class="panel-body">
+					{% include "MassilMedicalBundle:Examen:examen.html.twig" %}
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div class="row">
 		<div class="col-md-6">
 			<div class="panel panel-primary">
@@ -107,11 +85,12 @@
 		</div>
 			<!--$("#massil_medicalbundle_consultationtype_diagnostic").val()-->
 	</div>
-	{{ form_rest(form) }}
+	{{ form_row(form._token) }}
 	</form>
 	{% block javascript %}
 		{{ parent() }}
 		<script type="text/javascript" src="{{ asset('tinymce/js/tinymce/tinymce.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/add-tinymce-config.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/add-bilan-general.js') }}"></script>
 	{% endblock %}
 {% endblock %}

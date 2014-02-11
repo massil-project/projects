@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="col-md-2">
+		<a class="btn btn-success" id="btn-show-bilan-general">
+			<i class="glyphicon glyphicon-plus"></i>
+			Bilan G&eacute;n&eacute;ral
+		</a>
+	</div>
+	<div class="col-md-2">
+		<a class="btn btn-danger" id="btn-hide-bilan-general">
+			<i class="glyphicon glyphicon-minus"></i>
+			Bilan G&eacute;n&eacute;ral
+		</a>
+	</div>
+	{{ form_row(form.examen.bilanGeneralActive) }}
+</div>
+<div class="row">
+	<div class="col-md-12" id="div-bilan-general">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				{% include "MassilMedicalBundle:Examen:hemostase.html.twig" %}
+			</div>
+		</div>
+	</div>
+</div>

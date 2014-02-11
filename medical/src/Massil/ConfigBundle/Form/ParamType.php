@@ -33,7 +33,7 @@ class ParamType extends AbstractType
     		$builder
     			->add($name,'checkbox',array('data'=>$data
     										,'required'=>FALSE
-    										,'label'=>$label));
+    										,'label'=>html_entity_decode($label)));
     	}
     	
     	

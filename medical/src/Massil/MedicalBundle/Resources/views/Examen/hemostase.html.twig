@@ -1,0 +1,81 @@
+<h5>H&eacute;mostase</h5>
+{% if form_errors(form.examen.bilangeneral.hemostase) %}
+	<div class="alert alert-danger">	
+		{{ form_errors(form.examen.bilangeneral.hemostase) }}
+	</div>
+{% endif %}
+
+{# distribute the fields in sections #}
+{% set sectionOne,sectionTwo,sectionThree,unites,nextFill,hemostaseParams = [],[],[],[],'s1',[] %}
+
+{% for field in form.examen.bilangeneral.hemostase %}
+	{% if nextFill == 's1' %}
+		{% set sectionOne = sectionOne|merge([field])%}
+		{% set nextFill = 's2' %}
+		{% set unites = unites|merge({(loop.index0): B01Unites[loop.index0]}) %}
+	{% elseif nextFill == 's2' %}
+		{% set sectionTwo = sectionTwo|merge([field])%}
+		{% set unites = unites|merge({(loop.index0): B01Unites[loop.index0]}) %}
+		{% set nextFill = 's3' %}
+	{% elseif nextFill == 's3' %}
+		{% set sectionThree = sectionThree|merge([field])%}
+		{% set unites = unites|merge({(loop.index0): B01Unites[loop.index0]}) %}
+		{% set nextFill = 's1' %}
+	{% endif %}
+{% endfor %}
+
+{# display the fields in devided in three sections #}
+<div class="col-md-4">
+	{% for input in sectionOne %}
+		{% if form_errors(input) %}
+			<div class="alert alert-danger">
+				{{ form_errors(input) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<i class="glyphicon glyphicon-tint"></i>
+			</span>
+			{{ form_widget(input,{'attr':{'class':'form-control'}}) }}
+			<span class="input-group-addon">
+				{{ unites[loop.index0] }}
+			</span>
+		</div>
+	{% endfor %}
+</div>
+<div class="col-md-4">
+	{% for input in sectionTwo %}
+		{% if form_errors(input) %}
+			<div class="alert alert-danger">
+				{{ form_errors(input) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<i class="glyphicon glyphicon-tint"></i>
+			</span>
+			{{ form_widget(input,{'attr':{'class':'form-control'}}) }}
+			<span class="input-group-addon">
+				{{ unites[loop.index0] }}
+			</span>
+		</div>
+	{% endfor %}
+</div>
+<div class="col-md-4">
+	{% for input in sectionThree %}
+		{% if form_errors(input) %}
+			<div class="alert alert-danger">
+				{{ form_errors(input) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<i class="glyphicon glyphicon-tint"></i>
+			</span>
+			{{ form_widget(input,{'attr':{'class':'form-control'}}) }}
+			<span class="input-group-addon">
+				{{ unites[loop.index0] }}
+			</span>
+		</div>
+	{% endfor %}
+</div>
