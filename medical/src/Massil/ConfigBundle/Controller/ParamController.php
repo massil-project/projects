@@ -51,7 +51,8 @@ class ParamController extends Controller
     							,'nom'=>'bilan general')
     					);
     	//array of parameters
-    	$parameters = array(// temps de saignement (minutes) Technique de Duke
+    	$parameters = array(//start with hemosatse params
+    						// temps de saignement (minutes) Technique de Duke
     						array('code'=>'P01'
     								,'nom'=>'Temps de saignement Duke'
     								,'unite'=>'min')
@@ -103,6 +104,120 @@ class ParamController extends Controller
     						,array('code'=>'P11'
     								,'nom'=>'Prot&eacute;ine C/prot&eacute;ine S'
     								,'unite'=>'mg/l')
+    						//end of hemostase params
+    						// start of FNS params
+    						//-	Hématie (millions/mm3)
+    						,array('code'=>'P12'
+    								,'nom'=>'H&eacute;matie'
+    								,'unite'=>'/mm&sup3;')
+    						//-	Hémoglobine (g/100 ml)
+    						,array('code'=>'P13'
+    								,'nom'=>'H&eacute;moglobine'
+    								,'unite'=>'g/100 ml')
+    						//-	Hématocrite (%)
+    						,array('code'=>'P14'
+    								,'nom'=>'H&eacute;matocrite'
+    								,'unite'=>'%')
+    						//-	VGM (µ3)
+    						,array('code'=>'P15'
+    								,'nom'=>'VGM'
+    								,'unite'=>'&micro;&sup3;')
+    						//-	TCMH (pg)
+    						,array('code'=>'P16'
+    								,'nom'=>'TCMH'
+    								,'unite'=>'&rho;g')
+    						//-	CCMH (%)
+    						,array('code'=>'P17'
+    								,'nom'=>'CCMH'
+    								,'unite'=>'%')
+    						//-	Leucocytes (/mm3×1000)
+    						,array('code'=>'P18'
+    								,'nom'=>'Leucocytes'
+    								,'unite'=>'/mm&sup3;x1000')
+    						//-	Réticulocytes (%)
+    						,array('code'=>'P19'
+    								,'nom'=>'R&eacute;ticulocytes'
+    								,'unite'=>'%')
+    						//-	Polynucléaires Neutrophiles (%)
+    						,array('code'=>'P20'
+    								,'nom'=>'Polynucl&eacute;aires Neutrophiles'
+    								,'unite'=>'%')
+    						//-	Polynucléaires Eosinophiles (%)
+    						,array('code'=>'P21'
+    								,'nom'=>'Polynucl&eacute;aires Eosinophiles'
+    								,'unite'=>'%')
+    						//-	Polynucléaires Basophiles (%)
+    						,array('code'=>'P22'
+    								,'nom'=>'Polynucl&eacute;aires Basophiles'
+    								,'unite'=>'%')
+    						//-	Lymphocytes (%)
+    						,array('code'=>'P23'
+    								,'nom'=>'Lymphocytes'
+    								,'unite'=>'%')
+    						//-	Monocytes (%)
+    						,array('code'=>'P24'
+    								,'nom'=>'Monocytes'
+    								,'unite'=>'%')
+    						//-	Plaquettes (/mm3)
+    						,array('code'=>'P25'
+    								,'nom'=>'Plaquettes'
+    								,'unite'=>'/mm&sup3;')
+    						//-	Hémoglobines plasmatique (50mg/l)
+    						,array('code'=>'P26'
+    								,'nom'=>'H&eacute;moglobines plasmatique'
+    								,'unite'=>'mg/l')
+    						//-	Hémoglobines glyquée ou glycosylée HbA1C (%)
+    						,array('code'=>'P27'
+    								,'nom'=>'H&eacute;moglobines glyquée HbA1C'
+    								,'unite'=>'%')
+    						//-	Vitesse de sédimentation (mm)
+    						,array('code'=>'P28'
+    								,'nom'=>'Vitesse de s&eacute;dimentation VS'
+    								,'unite'=>'mm')
+    						//o	Proérythroblaste
+    						,array('code'=>'P29'
+    								,'nom'=>'Pro&eacute;rythroblaste'
+    								,'unite'=>'%')
+    						//o	Erythroblaste basophile
+    						,array('code'=>'P30'
+    								,'nom'=>'Erythroblaste basophile'
+    								,'unite'=>'%')
+    						//o	Erythroblaste polychromatophile
+    						,array('code'=>'P31'
+    								,'nom'=>'Erythroblaste polychromatophile'
+    								,'unite'=>'%')
+    						//o	Erythroblaste acidophile
+    						,array('code'=>'P32'
+    								,'nom'=>'Erythroblaste acidophile'
+    								,'unite'=>'%')
+    						//o	Myéloblaste
+    						,array('code'=>'P33'
+    								,'nom'=>'My&eacute;loblaste'
+    								,'unite'=>'%')
+    						//o	Promyélocyte
+    						,array('code'=>'P34'
+    								,'nom'=>'Promy&eacute;locyte'
+    								,'unite'=>'')
+    						//o	Myélocyte neutrophile
+    						,array('code'=>'P35'
+    								,'nom'=>'My&eacute;locyte neutrophile'
+    								,'unite'=>'%')
+    						//o	Métamyélocyte neutrophile
+    						,array('code'=>'P36'
+    								,'nom'=>'M&eacute;tamy&eacute;locyte neutrophile'
+    								,'unite'=>'%')
+    						//oPolynucléaire
+    						,array('code'=>'P37'
+    								,'nom'=>'Polynucl&eacute;aire'
+    								,'unite'=>'%')
+    						//o	Plasmocytes
+    						,array('code'=>'P38'
+    								,'nom'=>'Plasmocytes'
+    								,'unite'=>'%')
+    						//-	Mégacaryocytaire 
+    						,array('code'=>'P39'
+    								,'nom'=>'M&eacute;gacaryocytaire '
+    								,'unite'=>'%')
     						);				
     						
     	
