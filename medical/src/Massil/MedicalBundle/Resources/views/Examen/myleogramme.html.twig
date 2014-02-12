@@ -1,0 +1,218 @@
+<div class="col-md-12">
+
+	{# process to show or not the title#}
+	{% set myleo = ['P29', 'P30', 'P31', 'P32', 'P33', 'P34', 'P35', 'P36', 'P37', 'P38', 'P39']%}
+	{% set myleogramme = 0 %}
+	{% for val in myleo %}
+		{% if val in unites|keys %}
+			{% set myleogramme = 1 %}
+		{% endif %}
+	{% endfor %}
+	{% if myleogramme == 1 %}
+		<h4>Myl&eacute;ogramme</h4>
+	{% endif %}
+	
+	<div class="col-md-4">
+		{# proerythroblaste P29 #}
+		{% if 'P29' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.proerythroblaste) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.proerythroblaste) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Pro&eacute;rythroblaste</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.proerythroblaste,{'attr':{'class':'form-control','placeholder':'Proerythroblaste'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P29 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# erythroblasteBasophile P30 #}
+		{% if 'P30' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.erythroblasteBasophile) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.erythroblasteBasophile) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Erythroblaste Basophile</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.erythroblasteBasophile,{'attr':{'class':'form-control','placeholder':'Erythroblaste Basophile'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P30 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# erythroblastePolychromatophile P31 #}
+		{% if 'P31' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.erythroblastePolychromatophile) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.erythroblastePolychromatophile) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Erythroblaste Polychromatophile</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.erythroblastePolychromatophile,{'attr':{'class':'form-control','placeholder':'Erythroblaste Polychromatophile'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P31 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# erythroblasteAcidophile P32 #}
+		{% if 'P32' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.erythroblasteAcidophile) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.erythroblasteAcidophile) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Erythroblaste Acidophile</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.erythroblasteAcidophile,{'attr':{'class':'form-control','placeholder':'erythroblasteAcidophile'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P32 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	</div>
+	
+	<div class="col-md-4">
+		{# myeloblaste P33 #}
+		{% if 'P33' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.myeloblaste) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.myeloblaste) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>My&eacute;loblaste</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.myeloblaste,{'attr':{'class':'form-control','placeholder':'Myeloblaste'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P33 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# promyelocyte P34 #}
+		{% if 'P34' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.promyelocyte) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.promyelocyte) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Promy&eacute;locyte</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.promyelocyte,{'attr':{'class':'form-control','placeholder':'promyelocyte'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P34 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# myelocyteNeutrophile P35 #}
+		{% if 'P35' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.myelocyteNeutrophile) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.myelocyteNeutrophile) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>My&eacute;locyte Neutrophile</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.myelocyteNeutrophile,{'attr':{'class':'form-control','placeholder':'Myelocyte Neutrophile'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P35 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# metamyelocyteNeutrophile P36 #}
+		{% if 'P36' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.metamyelocyteNeutrophile) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.metamyelocyteNeutrophile) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>M&eacute;tamy&eacute;locyte Neutrophile</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.metamyelocyteNeutrophile,{'attr':{'class':'form-control','placeholder':'Metamyelocyte Neutrophile'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P36 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	</div>
+	
+	<div class="col-md-4">
+		{# polynucleaire P37 #}
+		{% if 'P37' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.polynucleaire) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.polynucleaire) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Polynucl&eacute;aire</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.polynucleaire,{'attr':{'class':'form-control','placeholder':'Polynucleaire'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P37 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# plasmocytes P38 #}
+		{% if 'P38' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.plasmocytes) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.plasmocytes) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Plasmocytes</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.plasmocytes,{'attr':{'class':'form-control','placeholder':'Plasmocytes'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P38 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# megacaryocytaire P39 #}
+		{% if 'P39' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.fns.megacaryocytaire) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.fns.megacaryocytaire) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>M&eacute;gacaryocytaire</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.fns.megacaryocytaire,{'attr':{'class':'form-control','placeholder':'Megacaryocytaire'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P39 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	</div>
+</div>

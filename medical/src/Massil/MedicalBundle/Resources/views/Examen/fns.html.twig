@@ -1,0 +1,338 @@
+<div class="col-md-12">
+<h4>FNS</h4>
+	{% if form_errors(form.examen.bilangeneral.fns) %}
+		<div class="alert alert-danger">
+			{{ form_errors(form.examen.bilangeneral.fns) }}
+		</div>
+	{% endif %}
+	
+<div class="col-md-4">
+	{# hematie P12 #}
+	{% if 'P12' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.hematie) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.hematie) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>H&eacute;matie</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.hematie,{'attr':{'class':'form-control','placeholder':'Hematie'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P12 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+
+	{# hemoglobine P13 #}
+	{% if 'P13' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.hemoglobine) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.hemoglobine) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>H&eacute;moglobine</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.hemoglobine,{'attr':{'class':'form-control','placeholder':'Hemoglobine'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P13 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# hematocrite P14 #}
+	{% if 'P14' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.hematocrite) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.hematocrite) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>H&eacute;matocrite</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.hematocrite,{'attr':{'class':'form-control','placeholder':'Hematocrite'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P14 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+
+	{# vGM P15 #}
+	{% if 'P15' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.vGM) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.vGM) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>VGM</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.vGM,{'attr':{'class':'form-control','placeholder':'VGM'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P15 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+
+	{#  tCMH P16 #}
+	{% if 'P16' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.tCMH) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.tCMH) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>TCMH</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.tCMH,{'attr':{'class':'form-control','placeholder':'TCMH'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P16 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+
+	{# cCMH P17 #}
+	{% if 'P17' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.cCMH) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.cCMH) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>CCMH</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.cCMH,{'attr':{'class':'form-control','placeholder':'CCMH'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P17 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+</div>
+
+<div class="col-md-4">
+	{# hemoglobinesGlyqueeHbA1C P27 #}
+	{% if 'P27' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.hemoglobinesGlyqueeHbA1C) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.hemoglobinesGlyqueeHbA1C) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>HbA1C</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.hemoglobinesGlyqueeHbA1C,{'attr':{'class':'form-control','placeholder':'HbA1C'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P27 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# leucocytes P18 #}
+	{% if 'P18' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.leucocytes) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.leucocytes) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Leucocytes</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.leucocytes,{'attr':{'class':'form-control','placeholder':'Leucocytes'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P18 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# reticulocytes P19 #}
+	{% if 'P19' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.reticulocytes) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.reticulocytes) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>R&eacute;ticulocytes</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.reticulocytes,{'attr':{'class':'form-control','placeholder':'Reticulocytes'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P19 }}</strong>
+			</span>			
+		</div>
+	{% endif %}	
+
+	{# lymphocytes P23 #}
+	{% if 'P23' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.lymphocytes) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.lymphocytes) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Lymphocytes</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.lymphocytes,{'attr':{'class':'form-control','placeholder':'Lymphocytes'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P23 }}</strong>
+			</span>			
+		</div>
+	{% endif %}	
+
+	{# monocytes P24 #}
+	{% if 'P24' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.monocytes) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.monocytes) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Monocytes</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.monocytes,{'attr':{'class':'form-control','placeholder':'Monocytes'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P24 }}</strong>
+			</span>			
+		</div>
+	{% endif %}	
+
+	{# plaquettes P25 #}
+	{% if 'P25' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.plaquettes) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.plaquettes) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Plaquettes</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.plaquettes,{'attr':{'class':'form-control','placeholder':'Plaquettes'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P25 }}</strong>
+			</span>			
+		</div>
+	{% endif %}	
+</div>
+
+<div class="col-md-4">
+	{# hemoglobinesPlasmatique P26 #}
+	{% if 'P26' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.hemoglobinesPlasmatique) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.hemoglobinesPlasmatique) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>H&eacute;moglobines Plasmatique</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.hemoglobinesPlasmatique,{'attr':{'class':'form-control','placeholder':'Hemoglobines Plasmatique'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P26 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# vS1 and vS2 P28 #}
+	{% if 'P28' in unites|keys %}
+		{# VS 1st hour#}
+		{% if form_errors(form.examen.bilangeneral.fns.vS1) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.vS1) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>VS 1hr</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.vS1,{'attr':{'class':'form-control','placeholder':'VS 1 heure'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P28 }}</strong>
+			</span>			
+		</div>
+
+		{# VS 1nd hour#}
+		{% if form_errors(form.examen.bilangeneral.fns.vS2) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.vS2) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>VS 2hr</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.vS2,{'attr':{'class':'form-control','placeholder':'VS 2 heure'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P28 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# polynucleairesNeutrophiles P20 #}
+	{% if 'P20' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.polynucleairesNeutrophiles) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.polynucleairesNeutrophiles) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Poly.Neutrophiles</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.polynucleairesNeutrophiles,{'attr':{'class':'form-control','placeholder':'Polynucleaires Neutrophiles'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P20 }}</strong>
+			</span>			
+		</div>
+	{% endif %}	
+
+	{# polynucleairesEosinophiles P21 #}
+	{% if 'P21' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.polynucleairesEosinophiles) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.polynucleairesEosinophiles) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Poly.Eosinophiles</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.polynucleairesEosinophiles,{'attr':{'class':'form-control','placeholder':'Polynucleaires Eosinophiles'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P21 }}</strong>
+			</span>			
+		</div>
+	{% endif %}	
+
+	{# polynucleairesBasophiles P22 #}
+	{% if 'P22' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fns.polynucleairesBasophiles) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fns.polynucleairesBasophiles) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Poly.Basophiles</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fns.polynucleairesBasophiles,{'attr':{'class':'form-control','placeholder':'Polynucleaires Basophiles'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P22 }}</strong>
+			</span>			
+		</div>
+	{% endif %}	
+	
+</div>
+</div>

@@ -9,14 +9,35 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class ExamenType extends AbstractType
 {
 	private $bilanGeneralparams;
-	public function __construct($bilanGeneralParams)
+	private $isEdit;
+	private $b01Active;
+	public function __construct($bilanGeneralParams,$isEdit,$b01Active)
 	{
+		$this->b01Active=$b01Active;
 		$this->bilanGeneralparams=$bilanGeneralParams;
+		$this->isEdit=$isEdit;
 	}
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('bilanGeneralActive','hidden',array('data'=>'false'))
+    	if ($this->isEdit == true)
+    	{
+    		if ($this->b01Active == false)
+    		{
+		        $builder
+        		    ->add('bilanGeneralActive','hidden',array('data'=>'false'));
+    		}
+    		else 
+    		{
+		        $builder
+        		    ->add('bilanGeneralActive','hidden',array('data'=>'true'));
+    		}
+    	}
+    	else 
+    	{
+        	$builder
+         	   ->add('bilanGeneralActive','hidden',array('data'=>'false'));    		
+    	}
+    	$builder
             ->add('bilangeneral',new BilanGeneralType($this->bilanGeneralparams))
         ;
     }

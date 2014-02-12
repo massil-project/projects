@@ -197,7 +197,7 @@ class ParamController extends Controller
     						//o	Promyélocyte
     						,array('code'=>'P34'
     								,'nom'=>'Promy&eacute;locyte'
-    								,'unite'=>'')
+    								,'unite'=>'%')
     						//o	Myélocyte neutrophile
     						,array('code'=>'P35'
     								,'nom'=>'My&eacute;locyte neutrophile'

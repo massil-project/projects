@@ -26,19 +26,21 @@ class ConsultationController extends Controller
 		$paramsB01 = $em->getRepository('MassilConfigBundle:Parametere')
 					->getParamsInArray('B01');
 					
-		$unitesB01=array();
-		foreach ($paramsB01 as $unite)
-		{
-			array_push($unitesB01, $unite['unite']);
-		}
 		foreach ($paramsB01 as $param)
 		{
 			array_push($bilanGeneralParams, $param['code']);
 		}
+		
+		$unitesBilanGeneral=array();
+		
+		foreach ($paramsB01 as $param)
+		{
+			$unitesBilanGeneral[$param['code']]=html_entity_decode($param['unite']);
+		}
 					
 		$consulation=new Consultation();
 		
-		$form=$this->createForm(new ConsultationType($bilanGeneralParams), $consulation);
+		$form=$this->createForm(new ConsultationType($bilanGeneralParams,true,false), $consulation);
 		
 		$request=$this->getRequest();
 		
@@ -74,7 +76,7 @@ class ConsultationController extends Controller
 																					,'patient'=>$patient
 																					,'consultation'=>$consulation
 																					,'message'=>$message
-																					,'B01Unites'=>$unitesB01));
+																					,'unites'=>$unitesBilanGeneral));
 		
 	}
 	
@@ -89,10 +91,11 @@ class ConsultationController extends Controller
 					->getParamsInArray('B01');
 		
 		//save unities of measurments in an array
-		$unitesB01=array();
-		foreach ($paramsB01 as $unite)
+		$unitesBilanGeneral=array();
+		
+		foreach ($paramsB01 as $param)
 		{
-			array_push($unitesB01, $unite['unite']);
+			$unitesBilanGeneral[$param['code']]=html_entity_decode($param['unite']);
 		}
 		
 		//save bilan general parameters codes in array to constuct the forms
@@ -112,7 +115,7 @@ class ConsultationController extends Controller
 						
 		**/
 						
-		$form=$this->createForm(new ConsultationEditType($bilanGeneralParams), $consultation);
+		$form=$this->createForm(new ConsultationEditType($bilanGeneralParams,true,$consultation->getExamen()->getBilanGeneralActive()), $consultation);
 		
 		$request=$this->getRequest();
 		
@@ -148,7 +151,7 @@ class ConsultationController extends Controller
 		return $this->render('MassilMedicalBundle:Consultation:edit.html.twig',array('consultation'=>$consultation,
 																						'form'=>$form->createView()
 																						,'patient'=>$patient
-																						,'B01Unites'=>$unitesB01));	
+																						,'unites'=>$unitesBilanGeneral));	
 	}
 	
 	

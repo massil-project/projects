@@ -11,7 +11,6 @@ class ConsultationEditType extends ConsultationType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
-        
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
