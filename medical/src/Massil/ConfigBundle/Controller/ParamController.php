@@ -328,6 +328,56 @@ class ParamController extends Controller
     								,'nom'=>'Peptide C'
     								,'unite'=>'&micro;g/l')
     						//end of Sucres Parameters
+    						
+    						//Bilan hepatique parameters
+    						//-	Amylase urinaire : UI/l
+    						,array('code'=>'P65'
+    								,'nom'=>'Amylase urinaire'
+    								,'unite'=>'UI/l')
+    						//-	Alcool : g/l
+    						,array('code'=>'P66'
+    								,'nom'=>'Alcool'
+    								,'unite'=>'g/l')
+    						//-	Amylase : UI/l
+    						,array('code'=>'P67'
+    								,'nom'=>'Amylase'
+    								,'unite'=>'UI/l')
+    						//-	Bilirubine : mg/l
+    						,array('code'=>'P68'
+    								,'nom'=>'Bilirubine'
+    								,'unite'=>'mg/l')
+    						//- Y-GT = gamma glutamyl-transpeptidase : UI/l
+    						,array('code'=>'P69'
+    								,'nom'=>'&gamma;-GT'
+    								,'unite'=>'UI/l')
+    						//-	5 Nucléotidase :  UI/l
+    						,array('code'=>'P70'
+    								,'nom'=>'5 Nucl&eacute;otidase'
+    								,'unite'=>'UI/l')
+    						//-	Lipase : U/l ou U/24h
+    						,array('code'=>'P71'
+    								,'nom'=>'Lipase'
+    								,'unite'=>'U/24h')
+    						//-	Phosphatases acides : UI/l
+    						,array('code'=>'P72'
+    								,'nom'=>'Phosphatases acides'
+    								,'unite'=>'UI/l')
+    						//-	Phosphatases alcalines : UI/l
+    						,array('code'=>'P73'
+    								,'nom'=>'Phosphatases alcalines'
+    								,'unite'=>'UI/l')
+    						//-	Lactate deshydrogénase (LDH) : UI/l
+    						,array('code'=>'P74'
+    								,'nom'=>'LDH'
+    								,'unite'=>'UI/l')
+    						//-	ASAT ou TGO : UI/l
+    						,array('code'=>'P75'
+    								,'nom'=>'ASAT'
+    								,'unite'=>'UI/l')
+    						//-	ALAT ou TGP : UI/l
+    						,array('code'=>'P76'
+    								,'nom'=>'ALAT'
+    								,'unite'=>'UI/l')
     						);				
     						
     	
