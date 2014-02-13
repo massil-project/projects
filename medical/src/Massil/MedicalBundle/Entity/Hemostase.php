@@ -24,77 +24,77 @@ class Hemostase
     /**
      * @var string
      *
-     * @ORM\Column(name="tempsDeSaignementDuke", type="string", length=255, nullable=true)
+     * @ORM\Column(name="tempsDeSaignementDuke", type="decimal", scale=2, nullable=true)
      */
     private $tempsDeSaignementDuke;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tempsDeSaignementIvy", type="string", length=255, nullable=true)
+     * @ORM\Column(name="tempsDeSaignementIvy", type="decimal", scale=2, nullable=true)
      */
     private $tempsDeSaignementIvy;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tempsDeProthrombineINR", type="string", length=255, nullable=true)
+     * @ORM\Column(name="tempsDeProthrombineINR", type="decimal", scale=2, nullable=true)
      */
     private $tempsDeProthrombineINR;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tempsDeCephalineActiveTCA", type="string", length=255, nullable=true)
+     * @ORM\Column(name="tempsDeCephalineActiveTCA", type="decimal", scale=2, nullable=true)
      */
     private $tempsDeCephalineActiveTCA;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="fibrinogene", type="string", length=255, nullable=true)
+     * @ORM\Column(name="fibrinogene", type="decimal", scale=2, nullable=true)
      */
     private $fibrinogene;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="facteurAntithemophiliqueVIII", type="string", length=255, nullable=true)
+     * @ORM\Column(name="facteurAntithemophiliqueVIII", type="decimal", scale=2, nullable=true)
      */
     private $facteurAntithemophiliqueVIII;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="facteurAntithemophiliqueIX", type="string", length=255, nullable=true)
+     * @ORM\Column(name="facteurAntithemophiliqueIX", type="decimal", scale=2, nullable=true)
      */
     private $facteurAntithemophiliqueIX;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="heparenimie", type="string", length=255, nullable=true)
+     * @ORM\Column(name="heparenimie", type="decimal", scale=2, nullable=true)
      */
     private $heparenimie;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="antiThrombineDosage", type="string", length=255, nullable=true)
+     * @ORM\Column(name="antiThrombineDosage", type="decimal", scale=2, nullable=true)
      */
     private $antiThrombineDosage;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="antiThrombineActive", type="string", length=255, nullable=true)
+     * @ORM\Column(name="antiThrombineActive", type="decimal", scale=2, nullable=true)
      */
     private $antiThrombineActive;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="proteineCS", type="string", length=255, nullable=true)
+     * @ORM\Column(name="proteineCS", type="decimal", scale=2, nullable=true)
      */
     private $proteineCS;
 

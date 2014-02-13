@@ -1,0 +1,75 @@
+<div class="col-md-4">
+	<h4>Sucre</h4>
+	
+	{% if form_errors(form.examen.bilangeneral.sucre) %}
+		<div class="alert alert-danger">
+			{{ form_errors(form.examen.bilangeneral.sucre) }}
+		</div>
+	{% endif %}
+	
+	{# glycemie P61 #}
+	{% if 'P61' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.sucre.glycemie) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.sucre.glycemie) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>glyc&eacute;mie</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.sucre.glycemie,{'attr':{'class':'form-control','placeholder':'Glycemie'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P61 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# glucose P62 #}
+	{% if 'P62' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.sucre.glucose) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.sucre.glucose) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Glucose</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.sucre.glucose,{'attr':{'class':'form-control','placeholder':'Glucose'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P62 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# glucoseUrinaire P63 #}
+	{% if 'P63' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.sucre.glucoseUrinaire) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.sucre.glucoseUrinaire) }}
+			</div>
+		{% endif %}
+		<div class="form-group">
+			{{ form_widget(form.examen.bilangeneral.sucre.glucoseUrinaire,{'attr':{'class':'form-control input-sm'}}) }}
+		</div>
+	{% endif %}
+	
+	{# peptideC P64 #}
+	{% if 'P64' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.sucre.peptideC) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.sucre.peptideC) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Peptide C</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.sucre.peptideC,{'attr':{'class':'form-control','placeholder':'Peptide C'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P64 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+</div>

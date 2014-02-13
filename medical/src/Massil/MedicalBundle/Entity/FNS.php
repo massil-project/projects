@@ -24,203 +24,203 @@ class FNS
     /**
      * @var string
      *
-     * @ORM\Column(name="hematie", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="hematie", type="decimal", scale=2, nullable=true)
      */
     private $hematie;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="hemoglobine", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="hemoglobine", type="decimal", scale=2, nullable=true)
      */
     private $hemoglobine;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="hematocrite", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="hematocrite", type="decimal", scale=2, nullable=true)
      */
     private $hematocrite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="vGM", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="vGM", type="decimal", scale=2, nullable=true)
      */
     private $vGM;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tCMH", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="tCMH", type="decimal", scale=2, nullable=true)
      */
     private $tCMH;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cCMH", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="cCMH", type="decimal", scale=2, nullable=true)
      */
     private $cCMH;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="leucocytes", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="leucocytes", type="decimal", scale=2, nullable=true)
      */
     private $leucocytes;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="reticulocytes", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="reticulocytes", type="decimal", scale=2, nullable=true)
      */
     private $reticulocytes;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="polynucleairesNeutrophiles", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="polynucleairesNeutrophiles", type="decimal", scale=2, nullable=true)
      */
     private $polynucleairesNeutrophiles;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="polynucleairesEosinophiles", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="polynucleairesEosinophiles", type="decimal", scale=2, nullable=true)
      */
     private $polynucleairesEosinophiles;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="polynucleairesBasophiles", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="polynucleairesBasophiles", type="decimal", scale=2, nullable=true)
      */
     private $polynucleairesBasophiles;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lymphocytes", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="lymphocytes", type="decimal", scale=2, nullable=true)
      */
     private $lymphocytes;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="monocytes", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="monocytes", type="decimal", scale=2, nullable=true)
      */
     private $monocytes;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="plaquettes", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="plaquettes", type="decimal", scale=2, nullable=true)
      */
     private $plaquettes;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="hemoglobinesPlasmatique", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="hemoglobinesPlasmatique", type="decimal", scale=2, nullable=true)
      */
     private $hemoglobinesPlasmatique;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="hemoglobinesGlyqueeHbA1C", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="hemoglobinesGlyqueeHbA1C", type="decimal", scale=2, nullable=true)
      */
     private $hemoglobinesGlyqueeHbA1C;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="vS1", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="vS1", type="decimal", scale=2, nullable=true)
      */
     private $vS1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="vS2", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="vS2", type="decimal", scale=2, nullable=true)
      */
     private $vS2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="proerythroblaste", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="proerythroblaste", type="decimal", scale=2, nullable=true)
      */
     private $proerythroblaste;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="erythroblasteBasophile", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="erythroblasteBasophile", type="decimal", scale=2, nullable=true)
      */
     private $erythroblasteBasophile;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="erythroblastePolychromatophile", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="erythroblastePolychromatophile", type="decimal", scale=2, nullable=true)
      */
     private $erythroblastePolychromatophile;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="erythroblasteAcidophile", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="erythroblasteAcidophile", type="decimal", scale=2, nullable=true)
      */
     private $erythroblasteAcidophile;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="myeloblaste", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="myeloblaste", type="decimal", scale=2, nullable=true)
      */
     private $myeloblaste;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="promyelocyte", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="promyelocyte", type="decimal", scale=2, nullable=true)
      */
     private $promyelocyte;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="myelocyteNeutrophile", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="myelocyteNeutrophile", type="decimal", scale=2, nullable=true)
      */
     private $myelocyteNeutrophile;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="metamyelocyteNeutrophile", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="metamyelocyteNeutrophile", type="decimal", scale=2, nullable=true)
      */
     private $metamyelocyteNeutrophile;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="polynucleaire", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="polynucleaire", type="decimal", scale=2, nullable=true)
      */
     private $polynucleaire;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="plasmocytes", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="plasmocytes", type="decimal", scale=2, nullable=true)
      */
     private $plasmocytes;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="megacaryocytaire", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="megacaryocytaire", type="decimal", scale=2, nullable=true)
      */
     private $megacaryocytaire;
 

@@ -20,6 +20,7 @@ class BilanGeneralType extends AbstractType
             ->add('fns',new FNSType($this->bilanGeneralParams))
             ->add('fer',new FerType($this->bilanGeneralParams))
             ->add('proteines',new ProteinesType($this->bilanGeneralParams))
+            ->add('sucre',new SucreType($this->bilanGeneralParams))
         ;
     }
 

@@ -24,28 +24,28 @@ class Fer
     /**
      * @var string
      *
-     * @ORM\Column(name="ferSerique", type="decimal", scale=3 , nullable=true)
+     * @ORM\Column(name="ferSerique", type="decimal", scale=2 , nullable=true)
      */
     private $ferSerique;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tIBC", type="decimal", scale=3 ,nullable=true)
+     * @ORM\Column(name="tIBC", type="decimal", scale=2 ,nullable=true)
      */
     private $tIBC;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ferritine", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="ferritine", type="decimal", scale=2, nullable=true)
      */
     private $ferritine;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="transferrine", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="transferrine", type="decimal", scale=2, nullable=true)
      */
     private $transferrine;
 

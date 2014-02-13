@@ -42,6 +42,11 @@ class BilanGeneral
     private $proteines;
 
     /**
+     * @ORM\OneToOne(targetEntity="Massil\MedicalBundle\Entity\Sucre", cascade={"persist","remove"})
+     */
+    private $sucre;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -141,5 +146,28 @@ class BilanGeneral
     public function getProteines()
     {
         return $this->proteines;
+    }
+
+    /**
+     * Set sucre
+     *
+     * @param \Massil\MedicalBundle\Entity\Sucre $sucre
+     * @return BilanGeneral
+     */
+    public function setSucre(\Massil\MedicalBundle\Entity\Sucre $sucre = null)
+    {
+        $this->sucre = $sucre;
+
+        return $this;
+    }
+
+    /**
+     * Get sucre
+     *
+     * @return \Massil\MedicalBundle\Entity\Sucre 
+     */
+    public function getSucre()
+    {
+        return $this->sucre;
     }
 }

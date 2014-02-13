@@ -24,28 +24,28 @@ class Proteines
     /**
      * @var string
      *
-     * @ORM\Column(name="hemoglobineGlyquee", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="hemoglobineGlyquee", type="decimal", scale=2, nullable=true)
      */
     private $hemoglobineGlyquee;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cRP", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="cRP", type="decimal", scale=2, nullable=true)
      */
     private $cRP;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="albumine", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="albumine", type="decimal", scale=2, nullable=true)
      */
     private $albumine;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="electrophoreseDesProteinesSeriques", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="electrophoreseDesProteinesSeriques", type="decimal", scale=2, nullable=true)
      */
     private $electrophoreseDesProteinesSeriques;
 
@@ -59,77 +59,77 @@ class Proteines
     /**
      * @var string
      *
-     * @ORM\Column(name="proteinurie", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="proteinurie", type="decimal", scale=2, nullable=true)
      */
     private $proteinurie;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="microAlbuminurie", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="microAlbuminurie", type="decimal", scale=2, nullable=true)
      */
     private $microAlbuminurie;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="microAlbuminurie2", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="microAlbuminurie2", type="decimal", scale=2, nullable=true)
      */
     private $microAlbuminurie2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prealbumines", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="prealbumines", type="decimal", scale=2, nullable=true)
      */
     private $prealbumines;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cPK", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="cPK", type="decimal", scale=2, nullable=true)
      */
     private $cPK;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="troponine", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="troponine", type="decimal", scale=2, nullable=true)
      */
     private $troponine;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="fibrinogene", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="fibrinogene", type="decimal", scale=2, nullable=true)
      */
     private $fibrinogene;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="haptoglobine", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="haptoglobine", type="decimal", scale=2, nullable=true)
      */
     private $haptoglobine;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="myoglobine", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="myoglobine", type="decimal", scale=2, nullable=true)
      */
     private $myoglobine;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="hbCO", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="hbCO", type="decimal", scale=2, nullable=true)
      */
     private $hbCO;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="metHb", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="metHb", type="decimal", scale=2, nullable=true)
      */
     private $metHb;
 
@@ -143,7 +143,7 @@ class Proteines
     /**
      * @var string
      *
-     * @ORM\Column(name="hydroxyprolinurie", type="decimal", scale=3, nullable=true)
+     * @ORM\Column(name="hydroxyprolinurie", type="decimal", scale=2, nullable=true)
      */
     private $hydroxyprolinurie;
 
