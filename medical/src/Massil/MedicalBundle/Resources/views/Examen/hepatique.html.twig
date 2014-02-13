@@ -1,0 +1,269 @@
+<div class="col-md-12">
+	{# process to show or not the title#}
+	{% set hepat = ['P65', 'P66', 'P67', 'P68', 'P69', 'P70', 'P71', 'P72', 'P73', 'P74', 'P75', 'P76']%}
+	{% set title = 0 %}
+	{% for val in hepat %}
+		{% if val in unites|keys %}
+			{% set title = 1 %}
+		{% endif %}
+	{% endfor %}
+	{% if title == 1 %}
+		<h4>Bilan H&eacute;patique</h4>
+	{% endif %}
+	
+	{% if form_errors(form.examen.bilangeneral.hepatique) %}
+		{{ form_errors(form.examen.bilangeneral.hepatique) }}
+	{% endif %}
+	<div class="col-md-4">
+		{# amylaseUrinaire P65 #}
+		{% if 'P65' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.amylaseUrinaire) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.amylaseUrinaire) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Amylase Urinaire</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.amylaseUrinaire,{'attr':{'class':'form-control','placeholder':'Amylase Urinaire'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P65 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	
+		{# alcool P66 #}
+		{% if 'P66' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.alcool) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.alcool) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Alcool</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.alcool,{'attr':{'class':'form-control','placeholder':'Alcool'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P66 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	
+		{# amylase P67 #}
+		{% if 'P67' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.amylase) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.amylase) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Amylase</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.amylase,{'attr':{'class':'form-control','placeholder':'Amylase'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P67 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# yGT P69 #}
+		{% if 'P69' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.yGT) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.yGT) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>&gamma;-GT</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.yGT,{'attr':{'class':'form-control','placeholder':'Y-GT'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P69 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# nucleotidase P70 #}
+		{% if 'P70' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.nucleotidase) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.nucleotidase) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>5 Nucl&eacute;otidase</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.nucleotidase,{'attr':{'class':'form-control','placeholder':'5 Nucleotidase'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P70 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	</div>
+	
+	<div class="col-md-4">
+		{# bilirubineTotal and bilirubineLibre and bilirubineConjuguee P68 #}
+		{% if 'P68' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.bilirubineConjuguee) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.bilirubineConjuguee) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Bilirubine Conjugu&eacute;e</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.bilirubineConjuguee,{'attr':{'class':'form-control','placeholder':'Bilirubine Conjuguee'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P68 }}</strong>
+				</span>			
+			</div>
+
+			{% if form_errors(form.examen.bilangeneral.hepatique.bilirubineLibre) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.bilirubineLibre) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Bilirubine Libre</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.bilirubineLibre,{'attr':{'class':'form-control','placeholder':'Bilirubine Libre'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P68 }}</strong>
+				</span>			
+			</div>
+
+			{% if form_errors(form.examen.bilangeneral.hepatique.bilirubineTotal) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.bilirubineTotal) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Bilirubine Total</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.bilirubineTotal,{'attr':{'class':'form-control','placeholder':'Bilirubine Total'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P68 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# lipase P71 #}
+		{% if 'P71' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.lipase) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.lipase) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Lipase</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.lipase,{'attr':{'class':'form-control','placeholder':'Lipase'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P71 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# phosphatasesAcides P72 #}
+		{% if 'P72' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.phosphatasesAcides) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.phosphatasesAcides) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Phosphatases Acides</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.phosphatasesAcides,{'attr':{'class':'form-control','placeholder':'Phosphatases Acides'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P72 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	</div>
+	
+	<div class="col-md-4">
+		
+		{# phosphatasesAlcalines P73 #}
+		{% if 'P73' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.phosphatasesAlcalines) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.phosphatasesAlcalines) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Phosphatases Alcalines</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.phosphatasesAlcalines,{'attr':{'class':'form-control','placeholder':'Phosphatases Alcalines'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P73 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# lDH P74 #}
+		{% if 'P74' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.lDH) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.lDH) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>LDH</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.lDH,{'attr':{'class':'form-control','placeholder':'LDH'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P74 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# aSAT P75 #}
+		{% if 'P75' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.aSAT) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.aSAT) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>ASAT</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.aSAT,{'attr':{'class':'form-control','placeholder':'ASAT'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P75 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# aLAT P76 #}
+		{% if 'P76' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.hepatique.aLAT) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.hepatique.aLAT) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>ALAT</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.hepatique.aLAT,{'attr':{'class':'form-control','placeholder':'ALAT'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P76 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	</div>
+</div>
