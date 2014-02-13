@@ -47,6 +47,11 @@ class BilanGeneral
     private $sucre;
 
     /**
+     * @ORM\OneToOne(targetEntity="Massil\MedicalBundle\Entity\Hepatique", cascade={"persist","remove"})
+     */
+    private $hepatique;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -169,5 +174,28 @@ class BilanGeneral
     public function getSucre()
     {
         return $this->sucre;
+    }
+
+    /**
+     * Set hepatique
+     *
+     * @param \Massil\MedicalBundle\Entity\Hepatique $hepatique
+     * @return BilanGeneral
+     */
+    public function setHepatique(\Massil\MedicalBundle\Entity\Hepatique $hepatique = null)
+    {
+        $this->hepatique = $hepatique;
+
+        return $this;
+    }
+
+    /**
+     * Get hepatique
+     *
+     * @return \Massil\MedicalBundle\Entity\Hepatique 
+     */
+    public function getHepatique()
+    {
+        return $this->hepatique;
     }
 }
