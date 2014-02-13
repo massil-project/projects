@@ -1,0 +1,323 @@
+<div class="col-md-12">
+	<h4>Les prot&eacute;ines</h4>
+	{% if form_errors(form.examen.bilangeneral.proteines) %}
+		<div class="alert alert-danger">
+			{{ form_errors(form.examen.bilangeneral.proteines) }}
+		</div>
+	{% endif %}
+	
+	<div class="col-md-4">
+		{# cRP P45 #}
+		{% if 'P45' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.cRP) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.cRP) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>CRP</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.cRP,{'attr':{'class':'form-control','placeholder':'CRP'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P45 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# albumine P46 #}
+		{% if 'P46' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.albumine) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.albumine) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Albumine</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.albumine,{'attr':{'class':'form-control','placeholder':'Albumine'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P46 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# electrophoreseDesProteinesSeriques P47 #}
+		{% if 'P47' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.electrophoreseDesProteinesSeriques) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.electrophoreseDesProteinesSeriques) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Electrophor&egrave;se Des Prot&eacute;ines S&eacute;riques</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.electrophoreseDesProteinesSeriques,{'attr':{'class':'form-control','placeholder':'Electrophorese Des Proteines Seriques'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P47 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# proteinurie P49 #}
+		{% if 'P49' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.proteinurie) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.proteinurie) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Prot&eacute;inurie</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.proteinurie,{'attr':{'class':'form-control','placeholder':'Proteinurie'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P49 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# microAlbuminurie and microAlbuminurie2 P50 #}
+		{% if 'P50' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.microAlbuminurie) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.microAlbuminurie) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Micro Albuminurie 1</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.microAlbuminurie,{'attr':{'class':'form-control','placeholder':'Micro Albuminurie 1'}}) }}
+				<span class="input-group-addon">
+					<strong>mg/l</strong>
+				</span>			
+			</div>
+
+			{% if form_errors(form.examen.bilangeneral.proteines.microAlbuminurie2) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.microAlbuminurie2) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Micro Albuminurie 24h</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.microAlbuminurie2,{'attr':{'class':'form-control','placeholder':'Micro Albuminurie 24h'}}) }}
+				<span class="input-group-addon">
+					<strong>mg/24h</strong>
+				</span>			
+			</div>
+		{% endif %}
+	</div>
+	
+	<div class="col-md-4">
+		{# hemoglobinurie P48 #}
+		{% if 'P48' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.hemoglobinurie) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.hemoglobinurie) }}
+				</div>
+			{% endif %}
+			<div class="form-group">
+				{{ form_widget(form.examen.bilangeneral.proteines.hemoglobinurie,{'attr':{'class':'form-control'}}) }}	
+			</div>
+		{% endif %}
+					
+		{# fibrinogene P54 #}
+		{% if 'P54' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.fibrinogene) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.fibrinogene) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Fibrinog&egrave;ne</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.fibrinogene,{'attr':{'class':'form-control','placeholder':'Fibrinogene'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P54 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	
+		{# hbCO P57 #}
+		{% if 'P57' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.hbCO) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.hbCO) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>HbCO</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.hbCO,{'attr':{'class':'form-control','placeholder':'HbCO'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P57 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	
+		{# metHb P58 #}
+		{% if 'P58' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.metHb) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.metHb) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>MetHb</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.metHb,{'attr':{'class':'form-control','placeholder':'MetHb'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P58 }}</strong>
+				</span>			
+			</div>
+		{% endif %}	
+		
+		{# hemoglobineGlyquee P44 #}
+		{% if 'P44' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.hemoglobineGlyquee) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.hemoglobineGlyquee) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>H&eacute;moglobine Glyqu&eacute;e</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.hemoglobineGlyquee,{'attr':{'class':'form-control','placeholder':'Hemoglobine Glyquee'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P44 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	</div>
+	
+	<div class="col-md-4">
+		{# proteinurieDeBenceJones P59 #}
+		{% if 'P59' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.proteinurieDeBenceJones) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.proteinurieDeBenceJones) }}
+				</div>
+			{% endif %}
+			<div class="form-group">
+				{{ form_widget(form.examen.bilangeneral.proteines.proteinurieDeBenceJones,{'attr':{'class':'form-control'}}) }}
+			</div>
+		{% endif %}
+				
+		{# haptoglobine P55 #}
+		{% if 'P55' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.haptoglobine) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.haptoglobine) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Haptoglobine</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.haptoglobine,{'attr':{'class':'form-control','placeholder':'Haptoglobine'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P55 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# myoglobine P56 #}
+		{% if 'P56' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.myoglobine) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.myoglobine) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Myoglobine</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.myoglobine,{'attr':{'class':'form-control','placeholder':'Myoglobine'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P56 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	
+		{# hydroxyprolinurie P60 #}
+		{% if 'P60' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.hydroxyprolinurie) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.hydroxyprolinurie) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Hydroxyprolinurie</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.hydroxyprolinurie,{'attr':{'class':'form-control','placeholder':'Hydroxyprolinurie'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P60 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# prealbumines P51 #}
+		{% if 'P51' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.prealbumines) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.prealbumines) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Pr&eacute;albumines</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.prealbumines,{'attr':{'class':'form-control','placeholder':'Prealbumines'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P51 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# cPK P52 #}
+		{% if 'P52' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.cPK) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.cPK) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>CPK</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.cPK,{'attr':{'class':'form-control','placeholder':'CPK'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P52 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# troponine P53 #}
+		{% if 'P53' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.proteines.troponine) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.proteines.troponine) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>Troponine</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.proteines.troponine,{'attr':{'class':'form-control','placeholder':'Troponine'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P53 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+	</div>
+</div>

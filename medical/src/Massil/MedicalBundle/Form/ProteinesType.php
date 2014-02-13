@@ -62,7 +62,7 @@ class ProteinesType extends AbstractType
     	{
     		$builder
 	            ->add('hemoglobinurie','choice',array('required'=>false
-	            										,'choices'=>array('Presence','Absence')
+	            										,'choices'=>array('Hemoglobinurie : Absente','Hemoglobinurie : Presente')
 	            										,'empty_value'=>'Hemoglobinurie'
 	            										,'empty_data'=>null))
     		;
@@ -132,7 +132,7 @@ class ProteinesType extends AbstractType
     	{
     		$builder
 	            ->add('proteinurieDeBenceJones','choice',array('required'=>false
-	            												,'choices'=>array('Presente','Absente')
+	            												,'choices'=>array('Proteinurie de Bence Jones : Absente','Proteinurie de Bence Jones : Presente')
 	            												,'empty_data'=>null
 	            												,'empty_value'=>'Proteinurie de Bence Jones'))
     		;
