@@ -45,9 +45,23 @@ class Hepatique
     /**
      * @var string
      *
-     * @ORM\Column(name="bilirubine", type="decimal", scale=2, nullable=true)
+     * @ORM\Column(name="bilirubineTotal", type="decimal", scale=2, nullable=true)
      */
-    private $bilirubine;
+    private $bilirubineTotal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bilirubineLibre", type="decimal", scale=2, nullable=true)
+     */
+    private $bilirubineLibre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bilirubineConjuguee", type="decimal", scale=2, nullable=true)
+     */
+    private $bilirubineConjuguee;
 
     /**
      * @var string
@@ -186,26 +200,72 @@ class Hepatique
     }
 
     /**
-     * Set bilirubine
+     * Set bilirubineTotal
      *
-     * @param string $bilirubine
+     * @param string $bilirubineTotal
      * @return Hepatique
      */
-    public function setBilirubine($bilirubine)
+    public function setBilirubineTotal($bilirubineTotal)
     {
-        $this->bilirubine = $bilirubine;
+        $this->bilirubineTotal = $bilirubineTotal;
 
         return $this;
     }
 
     /**
-     * Get bilirubine
+     * Get bilirubineTotal
      *
      * @return string 
      */
-    public function getBilirubine()
+    public function getBilirubineTotal()
     {
-        return $this->bilirubine;
+        return $this->bilirubineTotal;
+    }
+
+    /**
+     * Set bilirubineLibre
+     *
+     * @param string $bilirubineLibre
+     * @return Hepatique
+     */
+    public function setBilirubineLibre($bilirubineLibre)
+    {
+        $this->bilirubineLibre = $bilirubineLibre;
+
+        return $this;
+    }
+
+    /**
+     * Get bilirubineLibre
+     *
+     * @return string 
+     */
+    public function getBilirubineLibre()
+    {
+        return $this->bilirubineLibre;
+    }
+
+    /**
+     * Set bilirubineConjuguee
+     *
+     * @param string $bilirubineConjuguee
+     * @return Hepatique
+     */
+    public function setBilirubineConjuguee($bilirubineConjuguee)
+    {
+        $this->bilirubineConjuguee = $bilirubineConjuguee;
+
+        return $this;
+    }
+
+    /**
+     * Get bilirubineConjuguee
+     *
+     * @return string 
+     */
+    public function getBilirubineConjuguee()
+    {
+        return $this->bilirubineConjuguee;
     }
 
     /**
