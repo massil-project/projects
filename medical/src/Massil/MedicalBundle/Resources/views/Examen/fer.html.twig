@@ -1,0 +1,81 @@
+<div class="col-md-4">
+	<h4>Fer</h4>
+	
+	{% if form_errors(form.examen.bilangeneral.fer) %}
+		<div class="alert alert-danger">
+			{{ form_errors(form.examen.bilangeneral.fer) }}
+		</div>
+	{% endif %}
+	
+	{# ferSerique P40 #}
+	{% if 'P40' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fer.ferSerique) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fer.ferSerique) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Fer S&eacute;rique</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fer.ferSerique,{'attr':{'class':'form-control','placeholder':'Fer Serique'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P40 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# tIBC P41 #}
+	{% if 'P41' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fer.tIBC) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fer.tIBC) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>TIBC</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fer.tIBC,{'attr':{'class':'form-control','placeholder':'TIBC'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P41 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# ferritine P42 #}
+	{% if 'P42' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fer.ferritine) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fer.ferritine) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Ferritine</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fer.ferritine,{'attr':{'class':'form-control','placeholder':'ferritine'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P42 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+	
+	{# transferrine P43 #}
+	{% if 'P43' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.fer.transferrine) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.fer.transferrine) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Transferrine</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.fer.transferrine,{'attr':{'class':'form-control','placeholder':'Transferrine'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P43 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+</div>

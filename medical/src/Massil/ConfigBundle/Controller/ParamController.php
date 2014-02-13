@@ -218,6 +218,97 @@ class ParamController extends Controller
     						,array('code'=>'P39'
     								,'nom'=>'M&eacute;gacaryocytaire '
     								,'unite'=>'%')
+    						//end of FNS params
+    						
+    						//start of Fer: Bilan martial params
+    						//-	Fer sérique (µmol/l)
+    						,array('code'=>'P40'
+    								,'nom'=>'Fer s&eacute;rique'
+    								,'unite'=>'&micro;mol/l')
+    						//-	TIBC (capacité totale de fixation de la transferrine en fer ) : µmol/l
+    						,array('code'=>'P41'
+    								,'nom'=>'TIBC'
+    								,'unite'=>'&micro;mol/l')
+    						//-	Ferritine (µg/l)
+    						,array('code'=>'P42'
+    								,'nom'=>'Ferritine'
+    								,'unite'=>'&micro;g/l')
+    						//-	Transferrine ou sidérophiline (g/l)
+    						,array('code'=>'P43'
+    								,'nom'=>'Transferrine'
+    								,'unite'=>'g/l')
+    						//end of fer: bilan martial
+    						
+    						//start of Les protéines
+    						//-	Hémoglobine glyquée : (µmol/l ou g/l)
+    						,array('code'=>'P44'
+    								,'nom'=>'H&eacute;moglobine glyqu&eacute;e'
+    								,'unite'=>'&micro;mol/l')
+    						//-	C-Réactive Protéine : mg/l
+    						,array('code'=>'P45'
+    								,'nom'=>'C-R&eacute;active Prot&eacute;ine'
+    								,'unite'=>'mg/l')
+    						//-	Albumine : g/l
+    						,array('code'=>'P46'
+    								,'nom'=>'Albumine'
+    								,'unite'=>'g/l')
+    						//-	Electrophorèse des protéines sériques : % ou g/l
+    						,array('code'=>'P47'
+    								,'nom'=>'Electrophor&egrave;se des prot&eacute;ines s&eacute;riques'
+    								,'unite'=>'%')
+    						//-	Hémoglobinurie : absence ou présence
+    						,array('code'=>'P48'
+    								,'nom'=>'H&eacute;moglobinurie'
+    								,'unite'=>'pr&eacute;sence')
+    						//-	Protéinurie : mg/24h ou g/l
+    						,array('code'=>'P49'
+    								,'nom'=>'Prot&eacute;inurie'
+    								,'unite'=>'mg/24h')
+    						//-	Micro albuminurie mg/l
+    						,array('code'=>'P50'
+    								,'nom'=>'Micro albuminurie'
+    								,'unite'=>'mg/l')
+    						//-	Préalbumines (g/l)
+    						,array('code'=>'P51'
+    								,'nom'=>'Pr&eacute;albumines'
+    								,'unite'=>'g/l')
+    						//-	CPK = Créatine PhosphoKinase (UI/l)
+    						,array('code'=>'P52'
+    								,'nom'=>'CPK Cr&eacute;atine PhosphoKinase'
+    								,'unite'=>'UI/l')
+    						//-	Troponine (µg/l)
+    						,array('code'=>'P53'
+    								,'nom'=>'Troponine'
+    								,'unite'=>'&micro;g/l')
+    						//-	Fibrinogène (g/l)
+    						,array('code'=>'P54'
+    								,'nom'=>'Fibrinog&egrave;ne'
+    								,'unite'=>'g/l')
+    						//-	Haptoglobine (g/l)
+    						,array('code'=>'P55'
+    								,'nom'=>'Haptoglobine'
+    								,'unite'=>'g/l')
+    						//-	Myoglobine (µg/l)
+    						,array('code'=>'P56'
+    								,'nom'=>'Myoglobine'
+    								,'unite'=>'&micro;g/l')
+    						//-	Carboxyhémoglobine HbCO : (%)
+    						,array('code'=>'P57'
+    								,'nom'=>'Carboxyh&eacute;moglobine HbCO'
+    								,'unite'=>'%')
+    						//-	Méthémoglobine MetHb : (%)
+    						,array('code'=>'P58'
+    								,'nom'=>'M&eacute;th&eacute;moglobine MetHb'
+    								,'unite'=>'%')
+    						//-	Protéinurie de Bence Jones : (absence ou présence)
+    						,array('code'=>'P59'
+    								,'nom'=>'Prot&eacute;inurie de Bence Jones'
+    								,'unite'=>'pr&eacute;sence')
+    						//-	Hydroxyprolinurie (mg/24h)
+    						,array('code'=>'P60'
+    								,'nom'=>'Hydroxyprolinurie'
+    								,'unite'=>'mg/24h')
+    						//end of Les protéines parameters
     						);				
     						
     	
@@ -257,7 +348,7 @@ class ParamController extends Controller
     		foreach ($savedParams as $sp)
     		{
     			$bilanParamEntity = new BilanParameter();
-    			$bilanParamEntity->setActivation(FALSE);
+    			$bilanParamEntity->setActivation(true);
     			$bilanParamEntity->setBilan($sb);
     			$bilanParamEntity->setParametere($sp);
     			

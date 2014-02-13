@@ -30,6 +30,16 @@ class BilanGeneral
      * @ORM\OneToOne(targetEntity="Massil\MedicalBundle\Entity\FNS", cascade={"persist","remove"})
      */
     private $fns;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Massil\MedicalBundle\Entity\Fer", cascade={"persist","remove"})
+     */
+    private $fer;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Massil\MedicalBundle\Entity\Proteines", cascade={"persist","remove"})
+     */
+    private $proteines;
 
     /**
      * Get id
@@ -85,5 +95,51 @@ class BilanGeneral
     public function getFns()
     {
         return $this->fns;
+    }
+
+    /**
+     * Set fer
+     *
+     * @param \Massil\MedicalBundle\Entity\Fer $fer
+     * @return BilanGeneral
+     */
+    public function setFer(\Massil\MedicalBundle\Entity\Fer $fer = null)
+    {
+        $this->fer = $fer;
+
+        return $this;
+    }
+
+    /**
+     * Get fer
+     *
+     * @return \Massil\MedicalBundle\Entity\Fer 
+     */
+    public function getFer()
+    {
+        return $this->fer;
+    }
+
+    /**
+     * Set proteines
+     *
+     * @param \Massil\MedicalBundle\Entity\Proteines $proteines
+     * @return BilanGeneral
+     */
+    public function setProteines(\Massil\MedicalBundle\Entity\Proteines $proteines = null)
+    {
+        $this->proteines = $proteines;
+
+        return $this;
+    }
+
+    /**
+     * Get proteines
+     *
+     * @return \Massil\MedicalBundle\Entity\Proteines 
+     */
+    public function getProteines()
+    {
+        return $this->proteines;
     }
 }
