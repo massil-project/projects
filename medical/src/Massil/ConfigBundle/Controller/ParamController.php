@@ -309,6 +309,25 @@ class ParamController extends Controller
     								,'nom'=>'Hydroxyprolinurie'
     								,'unite'=>'mg/24h')
     						//end of Les protéines parameters
+    						
+    						//start of sucres parameters
+    						//-	Glycémie : µmol/l ou g/l
+    						,array('code'=>'P61'
+    								,'nom'=>'Glyc&eacute;mie'
+    								,'unite'=>'g/l')
+    						// -	Glucose : g/l
+    						,array('code'=>'P62'
+    								,'nom'=>'Glucose'
+    								,'unite'=>'g/l')
+    						// -	Glucose urinaire : présence ou absence
+    						,array('code'=>'P63'
+    								,'nom'=>'Glucose urinaire'
+    								,'unite'=>'présence')
+    						// -	Peptide C : µg/l
+    						,array('code'=>'P64'
+    								,'nom'=>'Peptide C'
+    								,'unite'=>'&micro;g/l')
+    						//end of Sucres Parameters
     						);				
     						
     	
