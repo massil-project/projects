@@ -52,6 +52,11 @@ class BilanGeneral
     private $hepatique;
 
     /**
+     * @ORM\OneToOne(targetEntity="Massil\MedicalBundle\Entity\Vitamine", cascade={"persist","remove"})
+     */
+    private $vitamine;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -197,5 +202,28 @@ class BilanGeneral
     public function getHepatique()
     {
         return $this->hepatique;
+    }
+
+    /**
+     * Set vitamine
+     *
+     * @param \Massil\MedicalBundle\Entity\Vitamine $vitamine
+     * @return BilanGeneral
+     */
+    public function setVitamine(\Massil\MedicalBundle\Entity\Vitamine $vitamine = null)
+    {
+        $this->vitamine = $vitamine;
+
+        return $this;
+    }
+
+    /**
+     * Get vitamine
+     *
+     * @return \Massil\MedicalBundle\Entity\Vitamine 
+     */
+    public function getVitamine()
+    {
+        return $this->vitamine;
     }
 }
