@@ -1,0 +1,190 @@
+<div class="col-md-6">
+	{# process to show or not the title#}
+	{% set hepat = ['P77', 'P78', 'P79', 'P80', 'P81', 'P82', 'P83', 'P84', 'P85']%}
+	{% set title = 0 %}
+	{% for val in hepat %}
+		{% if val in unites|keys %}
+			{% set title = 1 %}
+		{% endif %}
+	{% endfor %}
+	{% if title == 1 %}
+		<h4>Vitamines</h4>
+	{% endif %}
+	
+	{% if form_errors(form.examen.bilangeneral.vitamine) %}
+		<div class="alert alert-danger">
+			{{ form_errors(form.examen.bilangeneral.vitamine) }}
+		</div>
+	{% endif %}
+	
+	<div class="col-md-4">
+		{# a1 P77 #}
+		{% if 'P77' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.vitamine.a1) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.vitamine.a1) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>A1</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.vitamine.a1,{'attr':{'class':'form-control','placeholder':'A1'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P77 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# c P78 #}
+		{% if 'P78' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.vitamine.c) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.vitamine.c) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>C</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.vitamine.c,{'attr':{'class':'form-control','placeholder':'C'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P78 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# b1 P79 #}
+		{% if 'P79' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.vitamine.b1) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.vitamine.b1) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>B1</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.vitamine.b1,{'attr':{'class':'form-control','placeholder':'b1'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P79 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+	</div>
+	
+	<div class="col-md-4">
+		{# b2 P80 #}
+		{% if 'P80' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.vitamine.b2) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.vitamine.b2) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>B2</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.vitamine.b2,{'attr':{'class':'form-control','placeholder':'B2'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P80 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# b3 P81 #}
+		{% if 'P81' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.vitamine.b3) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.vitamine.b3) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>B3</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.vitamine.b3,{'attr':{'class':'form-control','placeholder':'B3'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P81 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# b6 P82 #}
+		{% if 'P82' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.vitamine.b6) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.vitamine.b6) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>B6</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.vitamine.b6,{'attr':{'class':'form-control','placeholder':'B6'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P82 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+	</div>
+	
+	<div class="col-md-4">
+		{# b9 P83 #}
+		{% if 'P83' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.vitamine.b9) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.vitamine.b9) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>B9</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.vitamine.b9,{'attr':{'class':'form-control','placeholder':'B9'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P83 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# b12 P84 #}
+		{% if 'P84' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.vitamine.b12) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.vitamine.b12) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>B12</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.vitamine.b12,{'attr':{'class':'form-control','placeholder':'B12'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P84 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+		{# d3 P85 #}
+		{% if 'P85' in unites|keys %}
+			{% if form_errors(form.examen.bilangeneral.vitamine.d3) %}
+				<div class="alert alert-danger">
+					{{ form_errors(form.examen.bilangeneral.vitamine.d3) }}
+				</div>
+			{% endif %}
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">
+					<strong>D3</strong>
+				</span>
+				{{ form_widget(form.examen.bilangeneral.vitamine.d3,{'attr':{'class':'form-control','placeholder':'d3'}}) }}
+				<span class="input-group-addon">
+					<strong>{{ unites.P85 }}</strong>
+				</span>			
+			</div>
+		{% endif %}
+		
+	</div>
+</div>
