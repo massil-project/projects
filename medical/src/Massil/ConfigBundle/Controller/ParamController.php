@@ -378,6 +378,46 @@ class ParamController extends Controller
     						,array('code'=>'P76'
     								,'nom'=>'ALAT'
     								,'unite'=>'UI/l')
+    						//end of bialn Hepatique parameters
+    								
+    						//start of Vetamines parameters
+    						//-	Vitamine A1 : µg/l
+    						,array('code'=>'P77'
+    								,'nom'=>'A1'
+    								,'unite'=>'&micro;g/l')
+    						//-	Vitamine C : mg/l
+    						,array('code'=>'P78'
+    								,'nom'=>'C'
+    								,'unite'=>'mg/l')
+    						//-	Vitamine B1 : µg/l
+    						,array('code'=>'P79'
+    								,'nom'=>'B1'
+    								,'unite'=>'&micro;g/l')
+    						//-	Vitamine B2 : µg/l
+    						,array('code'=>'P80'
+    								,'nom'=>'B2'
+    								,'unite'=>'&micro;g/l')
+    						//-	Vitamine B3 : mg/l
+    						,array('code'=>'P81'
+    								,'nom'=>'B3'
+    								,'unite'=>'mg/l')
+    						//-	Vitamine B6 : µg/l 
+    						,array('code'=>'P82'
+    								,'nom'=>'B6'
+    								,'unite'=>'&micro;g/l')
+    						//-	Vitamine B9 : µg/l
+    						,array('code'=>'P83'
+    								,'nom'=>'B9'
+    								,'unite'=>'&micro;g/l')
+    						//-	Vitamine B12 : ng/l
+    						,array('code'=>'P84'
+    								,'nom'=>'B12'
+    								,'unite'=>'&eta;g/l')
+    						//-	Vitamine D3 : µg/l
+    						,array('code'=>'P85'
+    								,'nom'=>'D3'
+    								,'unite'=>'&micro;g/l')
+    						//end of Vetamines parameters
     						);				
     						
     	
