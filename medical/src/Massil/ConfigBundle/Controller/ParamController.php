@@ -431,6 +431,81 @@ class ParamController extends Controller
     						,array('code'=>'P88'
     								,'nom'=>'ASLO'
     								,'unite'=>'U ASLO/ml')
+    						//end of ECBU
+    						//Les hormones
+    						//-	TSH ou Thyréostimuline : µU/ml
+    						,array('code'=>'P89'
+    								,'nom'=>'TSH'
+    								,'unite'=>'&micro;U/ml')
+    						//-	T4 ou Thyroxine : µg/l
+    						,array('code'=>'P90'
+    								,'nom'=>'T4'
+    								,'unite'=>'&micro;g/l')
+    						//-	T3 ou Tri-iodothyronine : µg/l
+    						,array('code'=>'P91'
+    								,'nom'=>'T3'
+    								,'unite'=>'&micro;g/l')
+    						//-	Calcitonine : ng/l
+    						,array('code'=>'P92'
+    								,'nom'=>'Calcitonine'
+    								,'unite'=>'&eta;g/l')
+    						//-	Corticostimuline ACTH : pg/l
+    						,array('code'=>'P93'
+    								,'nom'=>'ACTH'
+    								,'unite'=>'&rho;g/l')
+    						//-	Cortisol : µg/l
+    						,array('code'=>'P94'
+    								,'nom'=>'Cortisol'
+    								,'unite'=>'&micro;g/l')
+    						//-	Hormone antidiurétique ADH : pg/l
+    						,array('code'=>'P95'
+    								,'nom'=>'ADH'
+    								,'unite'=>'&rho;g/l')
+    						//-	Hormone chorionique Gonadotrophique bHCG : UI/l
+    						,array('code'=>'P96'
+    								,'nom'=>'bHCG'
+    								,'unite'=>'UI/l')
+    						//-	Hormone de croissance hGH : µg/l
+    						,array('code'=>'P97'
+    								,'nom'=>'hGH'
+    								,'unite'=>'&micro;g/l')
+    						//-	Hormone de folliculostimulante FSH : UI/l
+    						,array('code'=>'P98'
+    								,'nom'=>'FSH'
+    								,'unite'=>'UI/l')
+    						//-	Hormone lutéinisante LH : mUI/l
+    						,array('code'=>'P99'
+    								,'nom'=>'LH'
+    								,'unite'=>'mUI/l')
+    						//-	Insuline : mUI/l
+    						,array('code'=>'P100'
+    								,'nom'=>'Insuline'
+    								,'unite'=>'mUI/l')
+    						//-	Oestradiol : ng/l
+    						,array('code'=>'P101'
+    								,'nom'=>'&oelig;stradiol'
+    								,'unite'=>'&eta;g/l')
+    						//-	Parathormone PTH : ng/l
+    						,array('code'=>'P102'
+    								,'nom'=>'PTH'
+    								,'unite'=>'&eta;g/l')
+    						//-	Progestérone : µg/l
+    						,array('code'=>'P103'
+    								,'nom'=>'Progestérone'
+    								,'unite'=>'&micro;g/l')
+    						//-	Prolactine : mUI/l
+    						,array('code'=>'P104'
+    								,'nom'=>'Prolactine'
+    								,'unite'=>'mUI/l')
+    						//-	Testostérone : µg/l
+    						,array('code'=>'P105'
+    								,'nom'=>'Testostérone'
+    								,'unite'=>'&micro;g/l')
+    						//-	Thyroglobuline : µg /l
+    						,array('code'=>'P106'
+    								,'nom'=>'Thyroglobuline'
+    								,'unite'=>'&micro;g/l')
+    						//end Les hormones
     						);				
     						
     	
