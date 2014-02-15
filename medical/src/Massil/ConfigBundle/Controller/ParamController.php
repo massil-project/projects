@@ -418,6 +418,19 @@ class ParamController extends Controller
     								,'nom'=>'D3'
     								,'unite'=>'&micro;g/l')
     						//end of Vetamines parameters
+    						//start of ECBU and ASLO parameters
+    						//-	Examen cytologique : éléments/ mm3
+    						,array('code'=>'P86'
+    								,'nom'=>'Examen cytologique'
+    								,'unite'=>'/mm&sup3;')
+    						//-	Examen bactériologique : germes/ml
+    						,array('code'=>'P87'
+    								,'nom'=>'Examen bact&eacute;riologique'
+    								,'unite'=>'/ml')
+    						//-	Dosage des antistreptolysines O : U ASLO/ml
+    						,array('code'=>'P88'
+    								,'nom'=>'ASLO'
+    								,'unite'=>'U ASLO/ml')
     						);				
     						
     	

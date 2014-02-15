@@ -1,0 +1,68 @@
+<div class="col-md-12">
+	{% if form_errors(form.examen.bilangeneral.ecbuaslo) %}
+		<div class="alert alert-danger">
+			{{ form_errors(form.examen.bilangeneral.ecbuaslo) }}
+		</div>
+	{% endif %}
+	
+	<h4>ECBU et ASLO</h4>
+<div class="col-md-4">
+	{# cytologique P86 #}
+	{% if 'P86' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.ecbuaslo.cytologique) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.ecbuaslo.cytologique) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Examen Cytologique</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.ecbuaslo.cytologique,{'attr':{'class':'form-control','placeholder':'ECBU'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P86 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+</div>
+
+<div class="col-md-4">
+	{# bacteriologique P87 #}
+	{% if 'P87' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.ecbuaslo.bacteriologique) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.ecbuaslo.bacteriologique) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>Examen Bact&eacute;riologique</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.ecbuaslo.bacteriologique,{'attr':{'class':'form-control','placeholder':'ECBU'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P87 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+</div>
+<div class="col-md-4">	
+	
+	{# aSLO P88 #}
+	{% if 'P88' in unites|keys %}
+		{% if form_errors(form.examen.bilangeneral.ecbuaslo.aSLO) %}
+			<div class="alert alert-danger">
+				{{ form_errors(form.examen.bilangeneral.ecbuaslo.aSLO) }}
+			</div>
+		{% endif %}
+		<div class="input-group input-group-sm">
+			<span class="input-group-addon">
+				<strong>ASLO</strong>
+			</span>
+			{{ form_widget(form.examen.bilangeneral.ecbuaslo.aSLO,{'attr':{'class':'form-control','placeholder':'ASLO'}}) }}
+			<span class="input-group-addon">
+				<strong>{{ unites.P88 }}</strong>
+			</span>			
+		</div>
+	{% endif %}
+</div>
+</div>

@@ -23,6 +23,7 @@ class BilanGeneralType extends AbstractType
             ->add('sucre',new SucreType($this->bilanGeneralParams))
             ->add('hepatique',new HepatiqueType($this->bilanGeneralParams))
             ->add('vitamine',new VitamineType($this->bilanGeneralParams))
+            ->add('ecbuaslo',new ECBUASLOType($this->bilanGeneralParams))
         ;
     }
 

@@ -57,6 +57,11 @@ class BilanGeneral
     private $vitamine;
 
     /**
+     * @ORM\OneToOne(targetEntity="Massil\MedicalBundle\Entity\ECBUASLO", cascade={"persist","remove"})
+     */
+    private $ecbuaslo;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -225,5 +230,28 @@ class BilanGeneral
     public function getVitamine()
     {
         return $this->vitamine;
+    }
+
+    /**
+     * Set ecbuaslo
+     *
+     * @param \Massil\MedicalBundle\Entity\ECBUASLO $ecbuaslo
+     * @return BilanGeneral
+     */
+    public function setEcbuaslo(\Massil\MedicalBundle\Entity\ECBUASLO $ecbuaslo = null)
+    {
+        $this->ecbuaslo = $ecbuaslo;
+
+        return $this;
+    }
+
+    /**
+     * Get ecbuaslo
+     *
+     * @return \Massil\MedicalBundle\Entity\ECBUASLO 
+     */
+    public function getEcbuaslo()
+    {
+        return $this->ecbuaslo;
     }
 }
